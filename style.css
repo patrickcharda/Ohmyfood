@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+}
+
+.header__nav__logo, .titres {
+  font-family: "Shrikhand", cursive;
+}
+
+body {
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 11pt;
+  background-color: #000;
+  border-radius: 15px;
+}
+
+.second-skin {
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+p {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.main-button {
+  padding-left: 4px;
+  padding-right: 4px;
+  color: #fff;
+  background-color: #FF79DA;
+  height: 45px;
+  border-radius: 22px;
+}
+
+.header {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.header, .main, .footer {
+  background-color: #fff;
+}
+
+.titres {
+  font-size: small;
+}
+
+.header__nav {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 3px;
+}
+.header__nav__back {
+  order: 1;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+.header__nav__logo {
+  order: 2;
+}
+
+.presentation__cflex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.presentation__cflex__item1 {
+  flex-basis: 100%;
+  margin-bottom: 30px;
+  background-color: #F7F7F7;
+}
+.presentation__cflex__item1 .localisation {
+  background-color: #EDEDED;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.presentation__cflex__item1 .reservation__cflex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #F7F7F7;
+}
+.presentation__cflex__item1 .reservation__cflex > * {
+  flex-basis: 100%;
+  text-align: center;
+}
+.presentation__cflex__item1 .reservation__cflex button {
+  flex-basis: 55%;
+  margin-bottom: 15px;
+}
+.presentation__cflex__item2 {
+  flex-basis: 100%;
+  background-color: #fff;
+}
+.presentation__cflex__item2--titre {
+  padding-left: 20px;
+}
+.presentation__cflex__item2 .fct__cflex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.presentation__cflex__item2 .fct__cflex__item1 {
+  flex-basis: 100%;
+}
+.presentation__cflex__item2 .fct__cflex__item1 .cflex {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.presentation__cflex__item2 .fct__cflex__item1 .cflex > .item--numero {
+  color: white;
+  background-color: #9356DC;
+  width: 25px;
+  height: 25px;
+  border-radius: 12.5px;
+  font-size: 11px;
+  font-weight: 600;
+  padding-left: 9px;
+  padding-top: 7px;
+  z-index: 3;
+}
+.presentation__cflex__item2 .fct__cflex__item1 .cflex > .item--etape {
+  height: 60px;
+  padding-top: 22px;
+  padding-left: 25px;
+  padding-right: 10px;
+  margin-left: -12px;
+  border-radius: 25px;
+  box-shadow: 3px 3px 7px #aca8a8;
+  background-color: #F7F7F7;
+}
+.presentation__cflex__item2 .fct__cflex__item2 {
+  flex-basis: 100%;
+}
+.presentation__cflex__item2 .fct__cflex__item2 .cflex {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.presentation__cflex__item2 .fct__cflex__item2 .cflex > .item--numero {
+  color: white;
+  background-color: #9356DC;
+  width: 25px;
+  height: 25px;
+  border-radius: 12.5px;
+  font-size: 11px;
+  font-weight: 600;
+  padding-left: 9px;
+  padding-top: 7px;
+  z-index: 3;
+}
+.presentation__cflex__item2 .fct__cflex__item2 .cflex > .item--etape {
+  height: 60px;
+  padding-top: 22px;
+  padding-left: 25px;
+  padding-right: 10px;
+  margin-left: -12px;
+  border-radius: 25px;
+  box-shadow: 3px 3px 7px #aca8a8;
+  background-color: #F7F7F7;
+}
+.presentation__cflex__item2 .fct__cflex__item3 {
+  flex-basis: 100%;
+}
+.presentation__cflex__item2 .fct__cflex__item3 .cflex {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.presentation__cflex__item2 .fct__cflex__item3 .cflex > .item--numero {
+  color: white;
+  background-color: #9356DC;
+  width: 25px;
+  height: 25px;
+  border-radius: 12.5px;
+  font-size: 11px;
+  font-weight: 600;
+  padding-left: 9px;
+  padding-top: 7px;
+  z-index: 3;
+}
+.presentation__cflex__item2 .fct__cflex__item3 .cflex > .item--etape {
+  height: 60px;
+  padding-top: 22px;
+  padding-left: 25px;
+  padding-right: 10px;
+  margin-left: -12px;
+  border-radius: 25px;
+  box-shadow: 3px 3px 7px #aca8a8;
+  background-color: #F7F7F7;
+}
+
+/*# sourceMappingURL=style.css.map */

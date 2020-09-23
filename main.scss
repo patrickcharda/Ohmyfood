@@ -1,0 +1,156 @@
+* {
+	box-sizing: border-box;
+}
+
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-background-gris: #F7F7F7;
+$color-background-blanc: #fff;
+$color-background-black: #000;
+$breakpoints: ("mobile":"620px","middle":"920px","large":"1200px");
+$items_fonctionnement: ("1":"__item1","2":"__item2","3":"__item3");
+
+
+@mixin fonctionnement($etapes) {
+    @each $key,$value in $etapes {
+        &#{$value} {
+            flex-basis: 100%;
+            & .cflex {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                & > .item--numero {
+                    color: white;
+                    background-color: $color-primary;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 12.5px;
+                    font-size: 11px;
+                    font-weight: 600;
+                    padding-left: 9px;
+                    padding-top: 7px;
+                    z-index: 3;
+                }
+                & > .item--etape {
+                    height: 60px;
+                    padding-top: 22px;
+                    padding-left: 25px;
+                    padding-right: 10px;
+                    margin-left: -12px;
+                    border-radius: 25px;
+                    box-shadow: 3px 3px 7px rgb(172, 168, 168);
+                    background-color: $color-background-gris;
+                    
+                }
+            }
+        }
+    }
+}
+
+.header__nav__logo, .titres {
+    font-family: 'Shrikhand', cursive;
+}
+body {
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11pt;
+    background-color: $color-background-black;
+    border-radius: 15px;
+}
+.second-skin {
+    background-color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+p {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.main-button {
+    padding-left: 4px;
+    padding-right: 4px;
+    color: $color-background-blanc;
+    background-color: $color-secondary;
+    height: 45px;
+    border-radius: 22px;
+}
+
+.header {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.header, .main, .footer {
+    background-color: $color-background-blanc;
+}
+.titres {
+    font-size: small;
+}
+.header__nav {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    &__back {
+        order:1;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+    }
+    &__logo {
+        order: 2;
+    }
+}
+.presentation__cflex {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+
+    &__item1 {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+        background-color: #F7F7F7;
+        & .localisation {
+            background-color: #EDEDED;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        & .reservation__cflex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: $color-background-gris;
+            & > * {
+                flex-basis: 100%;
+                text-align: center;
+            }
+            & button {
+                flex-basis: 55%;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    &__item2 {
+        flex-basis: 100%;
+        background-color: $color-background-blanc;
+        &--titre {
+            padding-left: 20px;
+        }
+        & .fct__cflex {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            @include fonctionnement($items_fonctionnement);
+        }
+    }
+}
+
+
