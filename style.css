@@ -283,6 +283,7 @@ p {
   flex-basis: 100%;
 }
 .restaurants__cflex__item--carteresto1 .cflex__item--texte .cflex__item2--coeur {
+  position: relative;
   text-align: right;
   padding-right: 15px;
   padding-top: 10px;
@@ -308,6 +309,34 @@ p {
   left: 0;
   text-decoration: none;
   z-index: 5;
+}
+
+.coeur {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 5px;
+  right: 10px;
+  text-decoration: none;
+  z-index: 6;
+}
+.coeur:active {
+  background-color: pink;
+}
+.click-coeur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+}
+
+.svg-inline--fa .fa-heart .fa-w-16:active {
+  background-color: pink;
+}
+.svg-inline--fa .fa-heart .fa-w-16:hover {
+  background-color: black;
 }
 
 /*# sourceMappingURL=style.css.map */
