@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.header__nav__logo, .titres {
+.header__nav__logo {
   font-family: "Shrikhand", cursive;
 }
 
@@ -46,7 +46,8 @@ p {
 }
 
 .titres {
-  font-size: small;
+  font-size: medium;
+  font-weight: 700;
 }
 
 .header__nav {
@@ -112,6 +113,7 @@ p {
 }
 .presentation__cflex__item2 .fct__cflex__item1 {
   flex-basis: 100%;
+  margin-bottom: 5px;
 }
 .presentation__cflex__item2 .fct__cflex__item1 .cflex {
   display: flex;
@@ -133,6 +135,7 @@ p {
 }
 .presentation__cflex__item2 .fct__cflex__item1 .cflex > .item--etape {
   height: 60px;
+  width: 235px;
   padding-top: 22px;
   padding-left: 25px;
   padding-right: 10px;
@@ -143,6 +146,7 @@ p {
 }
 .presentation__cflex__item2 .fct__cflex__item2 {
   flex-basis: 100%;
+  margin-bottom: 5px;
 }
 .presentation__cflex__item2 .fct__cflex__item2 .cflex {
   display: flex;
@@ -164,6 +168,7 @@ p {
 }
 .presentation__cflex__item2 .fct__cflex__item2 .cflex > .item--etape {
   height: 60px;
+  width: 235px;
   padding-top: 22px;
   padding-left: 25px;
   padding-right: 10px;
@@ -174,6 +179,7 @@ p {
 }
 .presentation__cflex__item2 .fct__cflex__item3 {
   flex-basis: 100%;
+  margin-bottom: 5px;
 }
 .presentation__cflex__item2 .fct__cflex__item3 .cflex {
   display: flex;
@@ -195,6 +201,7 @@ p {
 }
 .presentation__cflex__item2 .fct__cflex__item3 .cflex > .item--etape {
   height: 60px;
+  width: 235px;
   padding-top: 22px;
   padding-left: 25px;
   padding-right: 10px;

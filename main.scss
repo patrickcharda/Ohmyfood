@@ -16,6 +16,7 @@ $items_fonctionnement: ("1":"__item1","2":"__item2","3":"__item3");
     @each $key,$value in $etapes {
         &#{$value} {
             flex-basis: 100%;
+            margin-bottom: 5px;
             & .cflex {
                 display: flex;
                 flex-wrap: nowrap;
@@ -35,6 +36,7 @@ $items_fonctionnement: ("1":"__item1","2":"__item2","3":"__item3");
                 }
                 & > .item--etape {
                     height: 60px;
+                    width: 235px;
                     padding-top: 22px;
                     padding-left: 25px;
                     padding-right: 10px;
@@ -49,7 +51,7 @@ $items_fonctionnement: ("1":"__item1","2":"__item2","3":"__item3");
     }
 }
 
-.header__nav__logo, .titres {
+.header__nav__logo {
     font-family: 'Shrikhand', cursive;
 }
 body {
@@ -88,7 +90,8 @@ p {
     background-color: $color-background-blanc;
 }
 .titres {
-    font-size: small;
+    font-size: medium;
+    font-weight: 700;
 }
 .header__nav {
     display: flex;
