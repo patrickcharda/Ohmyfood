@@ -10,7 +10,7 @@ $color-background-blanc: #fff;
 $color-background-black: #000;
 $breakpoints: ("mobile":"620px","middle":"920px","large":"1200px");
 $items_fonctionnement: ("1":"__item1","2":"__item2","3":"__item3");
-
+$liste_restaurants: ("1":"carteresto1","2":"carteresto2","3":"carteresto3","4":"carteresto4");
 
 @mixin fonctionnement($etapes) {
     @each $key,$value in $etapes {
@@ -49,6 +49,10 @@ $items_fonctionnement: ("1":"__item1","2":"__item2","3":"__item3");
             }
         }
     }
+}
+
+@mixin restaurants($restos) {
+
 }
 
 .header__nav__logo {
@@ -110,6 +114,7 @@ p {
         order: 2;
     }
 }
+// accueil et présentation du concept 
 .presentation__cflex {
     display:flex;
     flex-wrap:wrap;
@@ -156,4 +161,102 @@ p {
     }
 }
 
+// restaurants page accueil
+.img--resto-mobile {
+    flex-grow: 1;
+    width: 265px;
+    max-width: 610px;
+    min-width: 265px;
+    height: 250px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.restaurants__cflex {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $color-background-gris;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    &__item--titre {
+        flex-basis: 100%;
+        padding-left: 5px;
+        padding-bottom: 20px;
+        padding-top: 10px;
+    }
+    &__item--carteresto1 {
+        position: relative;
+        &:hover {
+            cursor: hand;
+        }
+        margin-bottom: 10px;
+        flex-basis: 100%;
+        & .cflex {
+            display: flex;
+            flex-wrap: wrap;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+            background-color: $color-background-blanc;
+            &__item--image {
+                display: flex;
+                position: relative;
+            }
+            &__item--texte {
+                flex-basis: 100%;
+                & .cflex {
+                    display:flex;
+                    justify-content: space-between;
+                    &__item1--identite {
+                        flex-basis: 50%;
+                        & .cflex {
+                            display: flex;
+                            flex-wrap: wrap;
+                            padding-top: 5px;
+                            padding-bottom: 5px;
+                            padding-left: 10px;
+                            height: 50px;
+
+                            & .nom_resto {
+                                font-weight: 600;
+                                flex-basis: 100%;
+                                
+                            }
+                            & .adresse_resto {
+                                font-weight: 300;
+                                flex-basis: 100%;
+                            }
+                        }
+                    }
+                    &__item2--coeur {
+                        text-align: right;
+                        padding-right: 15px;
+                        padding-top: 10px;
+                        flex-basis: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+.nouveau {
+    position: absolute;
+    background-color: $color-tertiary;
+    color: green;
+    top: 10px;
+    right: 25px;
+    padding: 4px;
+    padding-left : 7px;
+    padding-right: 7px;
+}
+.click-photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    z-index: 5;
+}
 

@@ -211,4 +211,103 @@ p {
   background-color: #F7F7F7;
 }
 
+.img--resto-mobile {
+  flex-grow: 1;
+  width: 265px;
+  max-width: 610px;
+  min-width: 265px;
+  height: 250px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.restaurants__cflex {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #F7F7F7;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+.restaurants__cflex__item--titre {
+  flex-basis: 100%;
+  padding-left: 5px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+.restaurants__cflex__item--carteresto1 {
+  position: relative;
+  margin-bottom: 10px;
+  flex-basis: 100%;
+}
+.restaurants__cflex__item--carteresto1:hover {
+  cursor: hand;
+}
+.restaurants__cflex__item--carteresto1 .cflex {
+  display: flex;
+  flex-wrap: wrap;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: #fff;
+}
+.restaurants__cflex__item--carteresto1 .cflex__item--image {
+  display: flex;
+  position: relative;
+}
+.restaurants__cflex__item--carteresto1 .cflex__item--texte {
+  flex-basis: 100%;
+}
+.restaurants__cflex__item--carteresto1 .cflex__item--texte .cflex {
+  display: flex;
+  justify-content: space-between;
+}
+.restaurants__cflex__item--carteresto1 .cflex__item--texte .cflex__item1--identite {
+  flex-basis: 50%;
+}
+.restaurants__cflex__item--carteresto1 .cflex__item--texte .cflex__item1--identite .cflex {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  height: 50px;
+}
+.restaurants__cflex__item--carteresto1 .cflex__item--texte .cflex__item1--identite .cflex .nom_resto {
+  font-weight: 600;
+  flex-basis: 100%;
+}
+.restaurants__cflex__item--carteresto1 .cflex__item--texte .cflex__item1--identite .cflex .adresse_resto {
+  font-weight: 300;
+  flex-basis: 100%;
+}
+.restaurants__cflex__item--carteresto1 .cflex__item--texte .cflex__item2--coeur {
+  text-align: right;
+  padding-right: 15px;
+  padding-top: 10px;
+  flex-basis: 50%;
+}
+
+.nouveau {
+  position: absolute;
+  background-color: #99E2D0;
+  color: green;
+  top: 10px;
+  right: 25px;
+  padding: 4px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.click-photo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+  z-index: 5;
+}
+
 /*# sourceMappingURL=style.css.map */
