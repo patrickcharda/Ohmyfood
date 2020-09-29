@@ -74,6 +74,7 @@ p {
     margin-bottom: 0px;
 }
 .main-button {
+    position: relative;
     padding-left: 4px;
     padding-right: 4px;
     color: $color-background-blanc;
@@ -81,6 +82,13 @@ p {
     height: 45px;
     border-radius: 22px;
     box-shadow: 1px 1px 5px 3px lightgrey; //lightgrey;20px 20px 50px 15px grey
+}
+#button-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .header {
@@ -96,16 +104,17 @@ p {
 }
 .header__nav {
     display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
     position: relative;
     justify-content: center;
     height: 50px;
     padding-top: 10px;
     padding-bottom: 3px;
-    &__back {
-        order:1;
+    //border: 1px red solid;
+    &__back {      
         position: absolute;
-        top: 4px;
-        left: 4px;
+        left: 8px;
     }
     &__logo {
         order: 2;
@@ -178,6 +187,7 @@ p {
 }
 .restaurants__cflex {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     background-color: $color-background-gris;
     padding-left: 15px;
