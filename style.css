@@ -407,6 +407,9 @@ footer {
   padding-left: 15px;
   color: white;
 }
+.footer--li {
+  padding-bottom: 8px;
+}
 .footer--titre {
   flex-basis: 100%;
   font-family: "Shrikhand", cursive;
@@ -501,6 +504,7 @@ footer {
 .moment--titre {
   padding-bottom: 0px;
   margin-bottom: -10px;
+  font-weight: 400;
 }
 
 .moment {
