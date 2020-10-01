@@ -6,8 +6,11 @@
   font-family: "Shrikhand", cursive;
 }
 
+.header__nav__back {
+  text-align: left;
+}
+
 body {
-  justify-content: center;
   font-family: "Roboto", sans-serif;
   font-size: 11pt;
   background-color: #000;
@@ -15,9 +18,18 @@ body {
 }
 
 .second-skin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+}
+
+.main {
+  flex-basis: 100%;
+  align-self: stretch;
 }
 
 p {
@@ -28,6 +40,7 @@ p {
 }
 
 .main-button {
+  position: relative;
   padding-left: 4px;
   padding-right: 4px;
   color: #fff;
@@ -35,6 +48,14 @@ p {
   height: 45px;
   border-radius: 22px;
   box-shadow: 1px 1px 5px 3px lightgrey;
+}
+
+.button-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .header {
@@ -51,19 +72,27 @@ p {
   font-weight: 700;
 }
 
+.header {
+  position: relative;
+  align-self: stretch;
+}
+
 .header__nav {
   display: flex;
-  position: relative;
+  flex-wrap: nowrap;
+  flex-direction: row;
   justify-content: center;
   height: 50px;
   padding-top: 10px;
   padding-bottom: 3px;
 }
-.header__nav__back {
-  order: 1;
+.header__nav__back svg {
   position: absolute;
-  top: 4px;
-  left: 4px;
+  left: 10px;
+  top: 20px;
+}
+.header__nav__back svg path {
+  fill: black;
 }
 .header__nav__logo {
   order: 2;
@@ -101,9 +130,11 @@ p {
   margin-bottom: 10px;
 }
 .presentation__cflex__item1 .reservation__cflex .main-button {
-  flex-basis: 55%;
+  flex-basis: 50%;
   margin-bottom: 30px;
   margin-top: 15px;
+  max-width: 200px;
+  min-width: 195px;
   background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
   font-weight: 600;
 }
@@ -152,6 +183,9 @@ p {
   box-shadow: 3px 3px 7px #aca8a8;
   background-color: #F7F7F7;
 }
+.presentation__cflex__item2 .fct__cflex__item1 .cflex > .item--etape.mauve {
+  background-color: #F7F1FF;
+}
 .presentation__cflex__item2 .fct__cflex__item2 {
   flex-basis: 100%;
   margin-bottom: 5px;
@@ -184,6 +218,9 @@ p {
   border-radius: 25px;
   box-shadow: 3px 3px 7px #aca8a8;
   background-color: #F7F7F7;
+}
+.presentation__cflex__item2 .fct__cflex__item2 .cflex > .item--etape.mauve {
+  background-color: #F7F1FF;
 }
 .presentation__cflex__item2 .fct__cflex__item3 {
   flex-basis: 100%;
@@ -218,6 +255,9 @@ p {
   box-shadow: 3px 3px 7px #aca8a8;
   background-color: #F7F7F7;
 }
+.presentation__cflex__item2 .fct__cflex__item3 .cflex > .item--etape.mauve {
+  background-color: #F7F1FF;
+}
 
 .img--resto-mobile {
   flex-grow: 1;
@@ -231,6 +271,9 @@ p {
 
 .restaurants__cflex {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
   flex-wrap: wrap;
   background-color: #F7F7F7;
   padding-left: 15px;
@@ -242,6 +285,7 @@ p {
   padding-left: 5px;
   padding-bottom: 20px;
   padding-top: 10px;
+  align-self: flex-start;
 }
 .restaurants__cflex__item--carteresto1 {
   position: relative;
@@ -349,13 +393,22 @@ p {
   background-color: black;
 }
 
+footer {
+  flex-basis: 100%;
+  align-self: stretch;
+}
+
 .footer {
   display: flex;
+  justify-content: stretch;
   flex-wrap: wrap;
   padding-top: 10px;
   background-color: #413f3f;
   padding-left: 15px;
   color: white;
+}
+.footer--li {
+  padding-bottom: 8px;
 }
 .footer--titre {
   flex-basis: 100%;
@@ -364,6 +417,7 @@ p {
   font-size: 18px;
 }
 .footer--ul {
+  flex-basis: 100%;
   list-style-type: none;
   padding-left: 0;
 }
@@ -371,6 +425,123 @@ p {
   text-decoration: none;
   color: white;
   margin-bottom: 3px;
+}
+
+#icon-violet path {
+  fill: #9356DC;
+}
+
+/*menu-restaurant*/
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+}
+.menu__item__photo {
+  flex-basis: 100%;
+  display: flex;
+}
+.menu__item__carte {
+  flex-basis: 100%;
+  background-color: #F7F7F7;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  margin-top: -10px;
+}
+.menu__item__carte .cflex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.menu__item__carte .cflex__item__enseigne {
+  flex-basis: 100%;
+  z-index: 1;
+  margin-bottom: 25px;
+  padding-left: 18px;
+  padding-right: 25px;
+  padding-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Shrikhand", cursive;
+}
+.menu__item__carte .cflex__item__moment {
+  flex-basis: 100%;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.menu__item__commande {
+  flex-basis: 100%;
+  text-align: center;
+  background-color: #F7F7F7;
+  align-self: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.menu__item__commande > .main-button {
+  margin-bottom: 30px;
+  margin-top: 15px;
+  max-width: 170px;
+  min-width: 165px;
+  background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
+  font-weight: 600;
+}
+
+.img--resto-mobile-menu {
+  flex-grow: 1;
+  width: 265px;
+  max-width: 610px;
+  min-width: 265px;
+  height: 250px;
+}
+
+.underscores {
+  color: #99E2D0;
+  font-weight: 700;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.moment--titre {
+  padding-bottom: 0px;
+  margin-bottom: -10px;
+  font-weight: 400;
+}
+
+.moment {
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.choix--titre {
+  margin-top: 5px;
+  margin-bottom: 4px;
+}
+
+.prix__entree, .prix__plat, .prix__dessert {
+  padding-right: 10px;
+}
+
+.entree .cflex, .plat .cflex, .dessert .cflex {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: white;
+  border-radius: 15px;
+  padding-left: 15px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.entree .cflex > .prix__entree, .entree .cflex .prix__plat, .entree .cflex .prix__dessert, .plat .cflex > .prix__entree, .plat .cflex .prix__plat, .plat .cflex .prix__dessert, .dessert .cflex > .prix__entree, .dessert .cflex .prix__plat, .dessert .cflex .prix__dessert {
+  font-weight: 600;
+  align-self: flex-end;
+}
+
+.choix__entree, .choix__plat, .choix__dessert {
+  flex-basis: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=style.css.map */
