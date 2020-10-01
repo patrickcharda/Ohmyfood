@@ -50,7 +50,7 @@ p {
   box-shadow: 1px 1px 5px 3px lightgrey;
 }
 
-#button-link {
+.button-link {
   position: absolute;
   top: 0;
   left: 0;
@@ -465,6 +465,22 @@ footer {
   flex-basis: 100%;
   padding-right: 5px;
   padding-left: 5px;
+}
+.menu__item__commande {
+  flex-basis: 100%;
+  text-align: center;
+  background-color: #F7F7F7;
+  align-self: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.menu__item__commande > .main-button {
+  margin-bottom: 30px;
+  margin-top: 15px;
+  max-width: 170px;
+  min-width: 165px;
+  background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
+  font-weight: 600;
 }
 
 .img--resto-mobile-menu {
