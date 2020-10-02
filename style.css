@@ -13,8 +13,6 @@
 body {
   font-family: "Roboto", sans-serif;
   font-size: 11pt;
-  background-color: #000;
-  border-radius: 15px;
 }
 
 .second-skin {
@@ -22,9 +20,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
 }
 
 .main {
@@ -259,16 +254,15 @@ p {
   background-color: #F7F1FF;
 }
 
-.img--resto-mobile {
-  flex-grow: 1;
-  width: 265px;
-  max-width: 610px;
-  min-width: 265px;
-  height: 250px;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-}
-
+/*.img--resto-mobile {
+    flex-grow: 1;
+    width: 265px;
+    max-width: 610px;
+    min-width: 265px;
+    height: 250px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}*/
 .restaurants__cflex {
   display: flex;
   flex-direction: column;
@@ -306,8 +300,54 @@ p {
   background-color: #fff;
 }
 .restaurants__cflex__item--carteresto1 .cflex__item--image {
+  flex-basis: 100%;
   display: flex;
   position: relative;
+  height: 150px;
+}
+.restaurants__cflex__item--carteresto1 .cflex__item--image > #img1 {
+  position: absolute;
+  background-image: url("./img/restaurants/small/LaPaletteDuGout.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.restaurants__cflex__item--carteresto1 .cflex__item--image > #img2 {
+  position: absolute;
+  background-image: url("./img/restaurants/small/LaNoteEnchantee.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.restaurants__cflex__item--carteresto1 .cflex__item--image > #img3 {
+  position: absolute;
+  background-image: url("./img/restaurants/small/AlaFrancaise.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.restaurants__cflex__item--carteresto1 .cflex__item--image > #img4 {
+  position: absolute;
+  background-image: url("./img/restaurants/small/LeDeliceDesSens.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 .restaurants__cflex__item--carteresto1 .cflex__item--texte {
   flex-basis: 100%;
@@ -353,6 +393,7 @@ p {
   padding: 4px;
   padding-left: 7px;
   padding-right: 7px;
+  z-index: 1;
 }
 
 .click-photo {
@@ -438,8 +479,54 @@ footer {
   justify-content: stretch;
 }
 .menu__item__photo {
+  position: relative;
   flex-basis: 100%;
   display: flex;
+  height: 200px;
+}
+.menu__item__photo > #img1 {
+  position: absolute;
+  background-image: url("./img/restaurants/small/LaPaletteDuGout.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.menu__item__photo > #img2 {
+  position: absolute;
+  background-image: url("./img/restaurants/small/LaNoteEnchantee.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.menu__item__photo > #img3 {
+  position: absolute;
+  background-image: url("./img/restaurants/small/AlaFrancaise.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.menu__item__photo > #img4 {
+  position: absolute;
+  background-image: url("./img/restaurants/small/LeDeliceDesSens.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 .menu__item__carte {
   flex-basis: 100%;
@@ -497,8 +584,10 @@ footer {
 .underscores {
   color: #99E2D0;
   font-weight: 700;
-  padding-top: 0px;
-  margin-top: 0px;
+  width: 40px;
+  padding-left: 5px;
+  margin-left: 0px;
+  margin-top: 15px;
 }
 
 .moment--titre {
