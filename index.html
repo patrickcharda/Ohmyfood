@@ -27,9 +27,9 @@
                             <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Paris, Belleville
                         </div>
                         <div class="presentation__cflex__item1 reservation__cflex">
-                            <h3 class="titres">Réservez le menu qui vous convient</h3>
+                            <div class="titres">Réservez le menu qui vous convient</div>
                             <p>Découvrez des restaurants d'exception,</br> sélectionnés par nos soins</p>
-                            <button class="main-button">Explorer nos restaurants</button>
+                            <button class="main-button"><a href="#section_restaurants" class="button-link"></a>Explorer nos restaurants</button>
                         </div>
                     </div>
                     <div class= "presentation__cflex__item2"><!--Fonctionnement-->
@@ -62,8 +62,8 @@
                                     <div class="item--numero">
                                         3
                                     </div>
-                                    <div class="item--etape">
-                                        <i class="fas fa-store"></i>&emsp;<span>Dégustez au restaurant</span>
+                                    <div class="item--etape mauve">
+                                        <i class="fas fa-store" id="icon-violet"></i>&emsp;<span>Dégustez au restaurant</span>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                 </div>
             </section>
             
-            <section class="restaurants">
+            <section class="restaurants" id="section_restaurants">
                 <div class="restaurants__cflex">
                     <div class="restaurants__cflex__item--titre titres">
                         <span class="titres">Restaurants</span>
@@ -199,50 +199,25 @@
         </main>
 
         <footer>
-            <section class="pied-de-page">
-                <div class="pied-de-page__apropos">
-                    <h4>
-                        A propos
-                    </h4>
-                    <ul>
-                        <li>
-                            Fonctionnement du site
+            <nav class="footer">
+                    <div class="footer--titre">
+                        ohmyfood
+                    </div>
+                    <ul class="footer--ul">
+                        <li class="footer--li">
+                            <i class="fas fa-utensils"></i>&nbsp;&nbsp;&nbsp;&nbsp;Proposer un restaurant
                         </li>
-                        <li>
-                            Conditions générales de vente
+                        <li class="footer--li">
+                            <i class="fas fa-hands-helping"></i>&nbsp;&nbsp;Devenir partenaire
                         </li>
-                        <li>
-                            Données et confidentialités
+                        <li class="footer--li">
+                            Mentions légales
+                        </li>
+                        <li class="footer--li">
+                            <a href="mailto:contact@ohmyfood.miam">Contact</a>
                         </li>  
                     </ul>
-                </div>
-                <div class="pied-de-page__noshebergements">
-                    <h4>
-                        Nos hébergements
-                    </h4>
-                    <ul>
-                        <li>
-                            Charte qualité
-                        </li>
-                        <li>
-                            Soumettre votre hôtel
-                        </li>
-                    </ul>
-                </div>
-                <div class="pied-de-page__assistance">
-                    <h4>
-                        Assistance
-                    </h4>
-                    <ul>
-                        <li>
-                            Centre d'aide
-                        </li>
-                        <li>
-                            Nous contacter
-                        </li> 
-                    </ul>
-                </div>
-            </section>
+                </nav>
         </footer>
     </div>
 </body>
