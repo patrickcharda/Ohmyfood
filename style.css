@@ -287,12 +287,11 @@ p {
   flex-basis: 100%;
 }
 .restaurants__cflex__item--carteresto1:hover {
-  cursor: hand;
+  cursor: pointer;
 }
 .restaurants__cflex__item--carteresto1 .cflex {
   display: flex;
   flex-wrap: wrap;
-  align-items: space-evenly;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -464,6 +463,11 @@ p {
   order: 1;
   opacity: 0;
   transition: all 2s;
+  /*&:active {
+      & path {
+          fill: greenyellow;
+      }
+  }
   /*&:hover {
       background-color: black;
   }*/
@@ -471,14 +475,86 @@ p {
 #plein path {
   fill: #FF79DA;
 }
-#plein:active path {
-  fill: greenyellow;
+
+#plein2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+#plein2 > path {
+  fill: #FF79DA;
 }
 
+#creu2 {
+  position: relative;
+  opacity: 1;
+  min-width: 15px;
+  flex-basis: 100%;
+  order: 2;
+  z-index: 88;
+  /*&:active {
+      opacity: 0;   
+      /*& + #plein path {
+          animation-play-state: running;
+      }
+  }*/
+}
+#creu2:hover {
+  animation: empty-heart 500ms forwards;
+}
+#creu2:hover + #plein2 {
+  animation: pink-fill-heart 1000ms 150ms both;
+}
+#creu2:hover:active + #plein2 {
+  animation: fill-heart 100ms both;
+}
+#creu2:hover:active + #plein2 path {
+  animation: purple-fill-heart 60ms 20ms both;
+}
+
+@keyframes empty-heart {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes purple-fill-heart {
+  from {
+    fill: #FF79DA;
+  }
+  to {
+    fill: #9356DC;
+  }
+}
+@keyframes pink-fill-heart {
+  0% {
+    transform-origin: right bottom;
+    transform: scale(0);
+    opacity: 0.2;
+  }
+  33% {
+    transform: scale(0.4);
+    opacity: 0.6;
+    animation-timing-function: cubic-bezier(0.73, 0.01, 0.2, 0.99);
+  }
+  80% {
+    transform: scale(0.7);
+    animation-timing-function: cubic-bezier(0.73, 0.01, 0.2, 0.99);
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    fill: #FF79DA;
+  }
+}
 @keyframes fill-heart {
   1% {
     transform-origin: right bottom;
-    transform: scale(0);
+    transform: scale(0.8);
     opacity: 0.4;
   }
   33% {
@@ -487,23 +563,13 @@ p {
     animation-timing-function: cubic-bezier(0.73, 0.01, 0.2, 0.99);
   }
   80% {
-    transform: scale(0.6);
+    transform: scale(1.3);
     animation-timing-function: cubic-bezier(0.73, 0.01, 0.2, 0.99);
-    fill: red;
     opacity: 1;
   }
   100% {
     opacity: 1;
     transform: scale(1);
-    fill: purple;
-  }
-}
-@keyframes empty-heart {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
   }
 }
 footer {

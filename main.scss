@@ -10,6 +10,7 @@ $color-background-blanc: #fff;
 $color-background-black: #000;
 $breakpoints: ("mobile":"620px","middle":"920px","large":"1200px");
 $images:("#img1":"LaPaletteDuGout.jpg","#img2":"LaNoteEnchantee.jpg","#img3":"AlaFrancaise.jpg","#img4":"LeDeliceDesSens.jpg");
+$accueil_small_images_path:"./../img/restaurants/small/";//prefixed
 $accueil_small_images_path:"./img/restaurants/small/";
 $items_fonctionnement: ("1":"__item1","2":"__item2","3":"__item3");
 $liste_restaurants: ("1":"carteresto1","2":"carteresto2","3":"carteresto3","4":"carteresto4");
@@ -247,14 +248,14 @@ p {
     &__item--carteresto1 {
         position: relative;
         &:hover {
-            cursor: hand;
+            cursor: pointer;
         }
         margin-bottom: 10px;
         flex-basis: 100%;
         & .cflex {
             display: flex;
             flex-wrap: wrap;
-            align-items: space-evenly;
+            //align-items: space-evenly;
             border-top-right-radius: 15px;
             border-top-left-radius: 15px;
             border-bottom-right-radius: 15px;
@@ -390,7 +391,6 @@ p {
 #plein {
     position: absolute;
     width: 100%;
-    //min-width: 15px;
     height: 100%;
     order: 1;
     opacity: 0;
@@ -402,7 +402,7 @@ p {
     }
     //top: 5px;
     //right: 10px;
-    &:active {
+    /*&:active {
         & path {
             fill: greenyellow;
         }
@@ -412,10 +412,104 @@ p {
     }*/
 }
 
+
+#plein2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    //order: 1;
+    opacity: 0;
+    & > path {
+        fill: $color-secondary;
+    }
+    //animation: fill-heart 1s 450ms both;
+    //animation-play-state: paused;
+}
+
+#creu2 {
+    position: relative;
+    opacity: 1;
+    min-width: 15px;
+    flex-basis: 100%;
+    order: 2;
+    z-index: 88;
+    //transition : opacity 200ms;
+    &:hover {
+        //opacity: 0;
+        animation: empty-heart 500ms forwards;
+        & + #plein2 {
+            //transform: translateY(-15px);
+            //z-index: 9;
+            //order: 2;
+            //opacity: 1;
+            animation: pink-fill-heart 1000ms 150ms both; 
+    }
+    &:active {
+        & + #plein2 {
+            //transition: all .0001s;
+            animation: fill-heart 100ms both;
+            & path {
+            //opacity: 1;
+            //fill: red;
+            animation: purple-fill-heart 60ms 20ms both;
+            //opacity: 1;
+            //z-index: 7;
+            }
+        }
+    }
+    }
+    /*&:active {
+        opacity: 0;   
+        /*& + #plein path {
+            animation-play-state: running;
+        }
+    }*/
+}
+
+
+@keyframes empty-heart {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes purple-fill-heart {
+    from {
+        fill: $color-secondary;
+    }
+    to {
+        fill: $color-primary;
+    }
+}
+@keyframes pink-fill-heart {
+    0% {
+        transform-origin: right bottom;
+        transform: scale(0);
+        opacity: 0.2;
+    }
+    33% {
+        transform: scale(0.4);
+        opacity: 0.6;
+        animation-timing-function: cubic-bezier(.73,.01,.2,.99)
+    }
+    80% {
+        transform: scale(0.7);
+        animation-timing-function: cubic-bezier(.73,.01,.2,.99);
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        fill:$color-secondary;
+        //transform-origin: center center;
+    }
+}
 @keyframes fill-heart {
     1% {
         transform-origin: right bottom;
-        transform: scale(0);
+        transform: scale(0.8);
         opacity: 0.4;
     }
     33% {
@@ -424,26 +518,14 @@ p {
         animation-timing-function: cubic-bezier(.73,.01,.2,.99)
     }
     80% {
-        transform: scale(0.6);
+        transform: scale(1.3);
         animation-timing-function: cubic-bezier(.73,.01,.2,.99);
-        fill: red;
         opacity: 1;
     }
     100% {
         opacity: 1;
         transform: scale(1);
-        fill: purple;
         //transform-origin: center center;
-    }
-
-}
-
-@keyframes empty-heart {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
     }
 }
 
