@@ -327,6 +327,8 @@ p {
     z-index: 5;
 }
 .coeur {
+    display: flex;
+    flex-wrap: nowrap;
     position: absolute;
     width: 15px;
     height: 15px;
@@ -334,28 +336,99 @@ p {
     right : 10px;
     text-decoration: none;
     z-index: 6;
-    &:active {
-        background-color: pink;
-    }
-    &:hover {
-        //background-color: black;
-    }
-
 }
-.click-coeur {
+/*.click-coeur {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     text-decoration: none;
-}
-.svg-inline--fa .fa-heart .fa-w-16 {
+}*/
+
+#creu {
+    position: relative;
+    opacity: 1;
+    min-width: 15px;
+    flex-basis: 100%;
+    order: 2;
+    //z-index: 8;
+    transition : opacity 200ms;
+    &:hover {
+        opacity: 0;
+        order: 1;
+        //z-index: 6;
+        & + #plein {
+            //transform: translateY(-15px);
+            opacity: 1;
+            & path {
+            //opacity: 1;
+            //z-index: 7;
+        }
+    }
+    }
     &:active {
+        opacity: 0;   
+        /*& + #plein path {
+            animation-play-state: running;
+        }*/
+    }
+}
+    //stroke: grey;
+    //stroke-width: 50;
+
+#plein {
+    position: absolute;
+    width: 100%;
+    //min-width: 15px;
+    height: 100%;
+    opacity: 0;
+    transition: all 1s;
+    & path {
+        fill: $color-secondary;
+    //animation: fill-heart 1s 450ms both;
+    //animation-play-state: paused;
+    }
+    //top: 5px;
+    //right: 10px;
+    /**&:active {
         background-color: pink;
     }
     &:hover {
         background-color: black;
+    }*/
+}
+
+@keyframes fill-heart {
+    1% {
+        transform-origin: right bottom;
+        transform: scale(0);
+        opacity: 0.4;
+    }
+    33% {
+        transform: scale(.33);
+        opacity: 0.7;
+        animation-timing-function: cubic-bezier(.73,.01,.2,.99)
+    }
+    80% {
+        transform: scale(1.5);
+        animation-timing-function: cubic-bezier(.73,.01,.2,.99);
+        fill: red;
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        //transform-origin: center center;
+    }
+
+}
+
+@keyframes empty-heart {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
 
