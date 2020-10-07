@@ -433,6 +433,12 @@ p {
   flex-basis: 100%;
   order: 2;
   transition: opacity 200ms;
+  /*&:active {
+      opacity: 0;   
+      /*& + #plein path {
+          animation-play-state: running;
+      }
+  }*/
 }
 #creu:hover {
   opacity: 0;
@@ -441,28 +447,32 @@ p {
 #creu:hover + #plein {
   opacity: 1;
 }
-#creu:active {
-  opacity: 0;
-  /*& + #plein path {
-      animation-play-state: running;
-  }*/
+#creu:hover:active {
+  order: 1;
+}
+#creu:hover:active + #plein {
+  order: 2;
+}
+#creu:hover:active + #plein path {
+  animation: fill-heart 100ms both;
 }
 
 #plein {
   position: absolute;
   width: 100%;
   height: 100%;
+  order: 1;
   opacity: 0;
-  transition: all 1s;
-  /**&:active {
-      background-color: pink;
-  }
-  &:hover {
+  transition: all 2s;
+  /*&:hover {
       background-color: black;
   }*/
 }
 #plein path {
   fill: #FF79DA;
+}
+#plein:active path {
+  fill: greenyellow;
 }
 
 @keyframes fill-heart {
@@ -472,18 +482,20 @@ p {
     opacity: 0.4;
   }
   33% {
-    transform: scale(0.33);
+    transform: scale(1.5);
     opacity: 0.7;
     animation-timing-function: cubic-bezier(0.73, 0.01, 0.2, 0.99);
   }
   80% {
-    transform: scale(1.5);
+    transform: scale(0.6);
     animation-timing-function: cubic-bezier(0.73, 0.01, 0.2, 0.99);
     fill: red;
     opacity: 1;
   }
   100% {
     opacity: 1;
+    transform: scale(1);
+    fill: purple;
   }
 }
 @keyframes empty-heart {
