@@ -360,19 +360,29 @@ p {
         //z-index: 6;
         & + #plein {
             //transform: translateY(-15px);
-            opacity: 1;
+            opacity: 1;  
+    }
+    &:active {
+        order: 1;
+        & + #plein {
+            order: 2;
+            //transition: all .0001s;
             & path {
             //opacity: 1;
+            //fill: red;
+            animation: fill-heart 100ms both;
+            //opacity: 1;
             //z-index: 7;
+            }
         }
     }
     }
-    &:active {
+    /*&:active {
         opacity: 0;   
         /*& + #plein path {
             animation-play-state: running;
-        }*/
-    }
+        }
+    }*/
 }
     //stroke: grey;
     //stroke-width: 50;
@@ -382,8 +392,9 @@ p {
     width: 100%;
     //min-width: 15px;
     height: 100%;
+    order: 1;
     opacity: 0;
-    transition: all 1s;
+    transition: all 2s;
     & path {
         fill: $color-secondary;
     //animation: fill-heart 1s 450ms both;
@@ -391,10 +402,12 @@ p {
     }
     //top: 5px;
     //right: 10px;
-    /**&:active {
-        background-color: pink;
+    &:active {
+        & path {
+            fill: greenyellow;
+        }
     }
-    &:hover {
+    /*&:hover {
         background-color: black;
     }*/
 }
@@ -406,18 +419,20 @@ p {
         opacity: 0.4;
     }
     33% {
-        transform: scale(.33);
+        transform: scale(1.5);
         opacity: 0.7;
         animation-timing-function: cubic-bezier(.73,.01,.2,.99)
     }
     80% {
-        transform: scale(1.5);
+        transform: scale(0.6);
         animation-timing-function: cubic-bezier(.73,.01,.2,.99);
         fill: red;
         opacity: 1;
     }
     100% {
         opacity: 1;
+        transform: scale(1);
+        fill: purple;
         //transform-origin: center center;
     }
 
