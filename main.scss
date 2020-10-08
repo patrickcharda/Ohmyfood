@@ -797,19 +797,43 @@ footer {
 .prix__entree, .prix__plat, .prix__dessert {
     padding-right: 10px;
 }
+
+.entree {
+    display: flex;
+    justify-content: stretch;
+    cursor: pointer;
+    &:hover {
+        & > .selected__entree {
+            animation: selection 3s forwards;
+            & > .cercle-blanc {
+                animation: cercle .1ms forwards;
+                & > .coche-verte {
+                    animation: coche .1ms .50ms forwards;
+                }
+            }
+        }
+    }
+}
+
 .entree .cflex, .plat .cflex, .dessert .cflex {
+    flex-basis: 100%;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     background-color: white;
-    border-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     padding-left: 15px;
-    padding-right: 5px;
+    padding-right: 15px;
     padding-bottom: 10px;
     margin-bottom: 10px;
+    margin-right: -10px;
     & > .prix__entree, .prix__plat, .prix__dessert {
         font-weight: 600;
         align-self: flex-end;
+        //transform: translateX(60%);
     }
 }
 .choix__entree, .choix__plat, .choix__dessert {
@@ -818,4 +842,83 @@ footer {
     flex-wrap: wrap;
     flex-direction: column;
 }
+
+.selected__entree, .selected__plat, .selected__dessert {
+    //align-self: stretch;
+    flex-basis: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-bottom: 10px;
+    //transform: translateX(2000%);
+}
+
+.cercle-blanc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: white;
+    transform: scale(0);
+    //animation: cercle .1ms forwards;
+    //animation-fill-mode: paused;
+}
+.coche-verte {
+    width: 15px;
+    height: 9px;
+    border-left: 3px $color-tertiary solid;
+    border-bottom: 3px $color-tertiary solid;
+    opacity: 0;
+    transform: scale(0);
+    
+    //animation-fill-mode: paused;
+}
+
+@keyframes grow {
+    0% {
+        transform-origin: left;
+        transform: scaleX(108%);
+    }
+    100% {
+        transform-origin: left;
+        transform: scaleX(108%);
+    }
+}
+@keyframes selection {
+    0% {
+        flex-basis: 10%;
+        transform: translateX(200%);
+        background-color: $color-tertiary;
+    }
+    100% {
+        background-color: $color-tertiary;
+        flex-basis: 10%;
+    }
+}
+
+@keyframes cercle {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes coche {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 
