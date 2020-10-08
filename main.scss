@@ -35,7 +35,11 @@ $liste_restaurants: ("1":"carteresto1","2":"carteresto2","3":"carteresto3","4":"
     @each $key,$value in $etapes {
         &#{$value} {
             flex-basis: 100%;
+            @if ($key == "3") {
+                margin-bottom: 20px;
+            } @else {
             margin-bottom: 5px;
+            }
             & .cflex {
                 display: flex;
                 flex-wrap: nowrap;
@@ -105,22 +109,32 @@ p {
     margin-bottom: 0px;
 }
 .main-button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
     position: relative;
-    padding-left: 4px;
+    /*padding-left: 4px;
     padding-right: 4px;
+    padding-top: 13px;*/
     color: $color-background-blanc;
-    background-color: $color-secondary;
+    background-image: linear-gradient(to bottom,$color-secondary,$color-primary);
     height: 45px;
     border-radius: 22px;
+    font-weight: 600;
     box-shadow: 1px 1px 5px 3px lightgrey; //lightgrey;20px 20px 50px 15px grey
+    &:hover {
+        background: linear-gradient(to bottom, lighten(#FF79DA, 5%), lighten(#9356DC, 5%));
+        box-shadow: 1px 1px 5px 3px darken(lightgrey, 10%);
+    }
 }
-.button-link {
+/*.button-link {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-}
+}*/
 
 .header {
     border-top-left-radius: 15px;
@@ -197,8 +211,16 @@ p {
                 margin-top: 15px;
                 max-width: 200px;
                 min-width: 195px;
-                background-image: linear-gradient(to bottom,$color-secondary,$color-primary);
+                padding-left: 4px;
+                padding-right: 4px;
+                padding-top: 13px;
+                /*background-image: linear-gradient(to bottom,$color-secondary,$color-primary);
                 font-weight: 600;
+                box-shadow: 1px 1px 5px 3px lightgrey; //lightgrey;20px 20px 50px 15px grey
+                &:hover {
+                    background: linear-gradient(to bottom, lighten(#FF79DA, 5%), lighten(#9356DC, 5%));
+                    box-shadow: 1px 1px 5px 3px lighten(lightgrey, 5%);
+                }*/
             }
         }
     }
@@ -218,7 +240,7 @@ p {
 }
 
 // restaurants page accueil
-/*.img--resto-mobile {
+/*.img-_resto-mobile {
     flex-grow: 1;
     width: 265px;
     max-width: 610px;
@@ -338,6 +360,18 @@ p {
     text-decoration: none;
     z-index: 6;
 }
+
+.coeur-resto {
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 30px;
+    right : 34px;
+    text-decoration: none;
+    z-index: 6;
+}
 /*.click-coeur {
     position: absolute;
     width: 100%;
@@ -413,7 +447,7 @@ p {
 }
 
 
-#plein2 {
+.plein2 {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -426,7 +460,7 @@ p {
     //animation-play-state: paused;
 }
 
-#creu2 {
+.creu2 {
     position: relative;
     opacity: 1;
     min-width: 15px;
@@ -437,7 +471,7 @@ p {
     &:hover {
         //opacity: 0;
         animation: empty-heart 500ms forwards;
-        & + #plein2 {
+        & + .plein2 {
             //transform: translateY(-15px);
             //z-index: 9;
             //order: 2;
@@ -445,7 +479,7 @@ p {
             animation: pink-fill-heart 1000ms 150ms both; 
     }
     &:active {
-        & + #plein2 {
+        & + .plein2 {
             //transition: all .0001s;
             animation: fill-heart 100ms both;
             & path {
@@ -588,6 +622,7 @@ footer {
             display: flex;
             flex-wrap:wrap;
             &__item__enseigne {
+                position: relative;
                 flex-basis: 100%;
                 z-index: 1;
                 margin-bottom: 25px;
@@ -614,16 +649,27 @@ footer {
         padding-top: 20px;
         padding-bottom: 40px;
         & > .main-button {
-            margin-bottom: 30px;
-            margin-top: 15px;
-            max-width: 170px;
-            min-width: 165px;
-            background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
+            margin-bottom: 20px;
+            margin-top: 20px;
+            max-width: 150px;
+            min-width: 130px;
+            //padding-left: 2px;
+            //padding-right: 2px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            height: 35px;
+            display: inline-block;
+            /*background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
             font-weight: 600;
+            box-shadow: 1px 1px 5px 3px lightgrey; //lightgrey;20px 20px 50px 15px grey
+            &:hover {
+                background: linear-gradient(to bottom, lighten(#FF79DA, 5%), lighten(#9356DC, 5%));
+                box-shadow: 1px 1px 5px 3px lighten(lightgrey, 5%);
+            }*/
         }
     }
 }
-.img--resto-mobile-menu {
+.img-_resto-mobile-menu {
     flex-grow: 1;
     width: 265px;
     max-width: 610px;

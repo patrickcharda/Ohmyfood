@@ -330,7 +330,7 @@ p {
   background-color: #F7F1FF;
 }
 
-/*.img--resto-mobile {
+/*.img-_resto-mobile {
     flex-grow: 1;
     width: 265px;
     max-width: 610px;
@@ -965,7 +965,7 @@ footer {
   font-weight: 600;
 }
 
-.img--resto-mobile-menu {
+.img-_resto-mobile-menu {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
