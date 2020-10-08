@@ -15,6 +15,11 @@ $accueil_small_images_path:"./img/restaurants/small/";
 $items_fonctionnement: ("1":"__item1","2":"__item2","3":"__item3");
 $liste_restaurants: ("1":"carteresto1","2":"carteresto2","3":"carteresto3","4":"carteresto4");
 
+$prog-bar-dur: 1000ms;
+$prog-bar-delay: 150ms;
+$show-delay: $prog-bar-dur + $prog-bar-delay * 2;
+$close-delay: $show-delay;
+
 @mixin images_accueil($img) {
     @each $key,$value in $img {
         & > #{$key} {
@@ -87,21 +92,112 @@ body {
     font-size: 11pt;
     //background-color: $color-background-black; 
     //border-radius: 15px;
+    //margin: 300px auto;
+	display: flex;
+	//height: 100%;
+	align-items: center;
+	justify-content: center;
+    flex-direction: column-reverse;
+    animation: darken $show-delay backwards;
+	.progress {
+        position: absolute;
+		width: 80%;
+        height: 4vh;
+        top: 50%;
+        left: 10%;
+		border: 2px solid $color-secondary;
+		padding: 0.25rem;
+        //margin-bottom: 30px;
+        animation: close-progress 200ms $close-delay forwards;
+		&__elem {
+			height: 100%;
+			background: $color-primary;
+			height: 100%;
+			transform-origin: left;
+			transform: scaleX(0.5);
+			animation: progress-elem $prog-bar-dur $prog-bar-delay both;
+		}
+	}
 }
-.second-skin {
+
+.second-skin-accueil {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    //transform: translateX(-10%);
+    animation: show .2s $show-delay both;
     //background-color: white;
     //border-top-left-radius: 15px;
     //border-top-right-radius: 15px;
 }
+.second-skin-resto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    //transform: translateX(-10%);
+    //animation: show .2s $show-delay both;
+    //background-color: white;
+    //border-top-left-radius: 15px;
+    //border-top-right-radius: 15px;
+}
+
+@keyframes darken {
+	0% {
+		background-color: black;
+    }
+    95% {
+        background-color: black;
+    }
+	100% {
+		background-color: white;
+	}
+}
+
+@keyframes show {
+	0% {
+		transform: translateX(-9999px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+
+@keyframes progress-elem {
+	0% {
+		transform: scaleX(0);
+	}
+	17% {
+		transform: scaleX(0.18);
+	}
+	24% {
+		transform: scaleX(0.4);
+		animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+	}
+	46% {
+		transform: scaleX(0.81);
+		animation-timing-function: cubic-bezier(0.25, 0.25, 1);
+	}
+	100% {
+        transform: scaleX(1);
+	}
+}
+
+@keyframes close-progress {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+    }
+}
+
 .main {
     flex-basis: 100%;
     align-self: stretch;
 }
-
 p {
     padding-top: 4px;
     padding-bottom: 4px;
