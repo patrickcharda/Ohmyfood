@@ -13,9 +13,10 @@
 body {
   font-family: "Roboto", sans-serif;
   font-size: 11pt;
+  background-color: white;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: stretch;
   flex-direction: column-reverse;
   animation: darken 1300ms backwards;
 }
@@ -41,16 +42,16 @@ body .progress__elem {
 .second-skin-accueil {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: stretch;
+  align-items: stretch;
   animation: show 0.2s 1300ms both;
 }
 
 .second-skin-resto {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: stretch;
+  align-items: stretch;
 }
 
 @keyframes darken {
@@ -728,49 +729,41 @@ footer {
   display: flex;
   height: 200px;
 }
-.menu__item__photo > #img1 {
+.menu__item__photo > .img1.resto {
   position: absolute;
-  background-image: url("./img/restaurants/small/LaPaletteDuGout.jpg");
+  background-image: url("./../img/restaurants/small/LaPaletteDuGout.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
   height: 100%;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
 }
-.menu__item__photo > #img2 {
+.menu__item__photo > .img2.resto {
   position: absolute;
-  background-image: url("./img/restaurants/small/LaNoteEnchantee.jpg");
+  background-image: url("./../img/restaurants/small/LaNoteEnchantee.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
   height: 100%;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
 }
-.menu__item__photo > #img3 {
+.menu__item__photo > .img3.resto {
   position: absolute;
-  background-image: url("./img/restaurants/small/AlaFrancaise.jpg");
+  background-image: url("./../img/restaurants/small/AlaFrancaise.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
   height: 100%;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
 }
-.menu__item__photo > #img4 {
+.menu__item__photo > .img4.resto {
   position: absolute;
-  background-image: url("./img/restaurants/small/LeDeliceDesSens.jpg");
+  background-image: url("./../img/restaurants/small/LeDeliceDesSens.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
   height: 100%;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
 }
 .menu__item__carte {
   flex-basis: 100%;
@@ -860,31 +853,122 @@ footer {
   margin-bottom: 4px;
 }
 
-.prix__entree, .prix__plat, .prix__dessert {
-  padding-right: 10px;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
 }
 
-.entree .cflex, .plat .cflex, .dessert .cflex {
+.entree__detail, .plat__detail, .dessert__detail {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: center;
   background-color: white;
-  border-radius: 15px;
-  padding-left: 15px;
-  padding-right: 5px;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+  min-width: 200px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
 }
-.entree .cflex > .prix__entree, .entree .cflex .prix__plat, .entree .cflex .prix__dessert, .plat .cflex > .prix__entree, .plat .cflex .prix__plat, .plat .cflex .prix__dessert, .dessert .cflex > .prix__entree, .dessert .cflex .prix__plat, .dessert .cflex .prix__dessert {
+.entree__detail .nom, .plat__detail .nom, .dessert__detail .nom {
+  flex-grow: 1;
+  flex-shrink: 2;
+  flex-basis: 60%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  line-height: 20px;
+}
+.entree__detail .prix, .plat__detail .prix, .dessert__detail .prix {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 5%;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  text-align: right;
+  align-self: stretch;
   font-weight: 600;
-  align-self: flex-end;
+}
+.entree__detail .select__entree, .entree__detail .select__plat, .entree__detail .select__dessert, .plat__detail .select__entree, .plat__detail .select__plat, .plat__detail .select__dessert, .dessert__detail .select__entree, .dessert__detail .select__plat, .dessert__detail .select__dessert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  align-self: stretch;
+}
+.entree__detail:hover > .select__entree, .entree__detail:hover .select__plat, .entree__detail:hover .select__dessert, .plat__detail:hover > .select__entree, .plat__detail:hover .select__plat, .plat__detail:hover .select__dessert, .dessert__detail:hover > .select__entree, .dessert__detail:hover .select__plat, .dessert__detail:hover .select__dessert {
+  animation: selection 0.5s forwards;
+  animation-timing-function: cubic-bezier(0.11, 0.95, 0.78, 0.68);
+}
+.entree__detail:hover > .select__entree > .cercle-blanc, .entree__detail:hover .select__plat > .cercle-blanc, .entree__detail:hover .select__dessert > .cercle-blanc, .plat__detail:hover > .select__entree > .cercle-blanc, .plat__detail:hover .select__plat > .cercle-blanc, .plat__detail:hover .select__dessert > .cercle-blanc, .dessert__detail:hover > .select__entree > .cercle-blanc, .dessert__detail:hover .select__plat > .cercle-blanc, .dessert__detail:hover .select__dessert > .cercle-blanc {
+  animation: cercle 250ms forwards;
+}
+.entree__detail:hover > .select__entree > .cercle-blanc > .coche-verte, .entree__detail:hover .select__plat > .cercle-blanc > .coche-verte, .entree__detail:hover .select__dessert > .cercle-blanc > .coche-verte, .plat__detail:hover > .select__entree > .cercle-blanc > .coche-verte, .plat__detail:hover .select__plat > .cercle-blanc > .coche-verte, .plat__detail:hover .select__dessert > .cercle-blanc > .coche-verte, .dessert__detail:hover > .select__entree > .cercle-blanc > .coche-verte, .dessert__detail:hover .select__plat > .cercle-blanc > .coche-verte, .dessert__detail:hover .select__dessert > .cercle-blanc > .coche-verte {
+  animation: coche 0.25s 0.1s forwards;
 }
 
-.choix__entree, .choix__plat, .choix__dessert {
-  flex-basis: 80%;
+.cercle-blanc {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 13.5px;
+  background-color: white;
+}
+
+.coche-verte {
+  width: 15px;
+  height: 9px;
+  border-left: 3px #99E2D0 solid;
+  border-bottom: 3px #99E2D0 solid;
+  opacity: 0;
+}
+
+@keyframes selection {
+  0% {
+    transform: scaleX(0);
+    background-color: #99E2D0;
+    z-index: 89;
+  }
+  100% {
+    max-width: 50px;
+    min-width: 50px;
+    background-color: #99E2D0;
+    transform: scaleX(1);
+    z-index: 89;
+  }
+}
+@keyframes cercle {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes coche {
+  0% {
+    transform: rotate(-360deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-45deg);
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

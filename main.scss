@@ -10,8 +10,10 @@ $color-background-blanc: #fff;
 $color-background-black: #000;
 $breakpoints: ("mobile":"620px","middle":"920px","large":"1200px");
 $images:("#img1":"LaPaletteDuGout.jpg","#img2":"LaNoteEnchantee.jpg","#img3":"AlaFrancaise.jpg","#img4":"LeDeliceDesSens.jpg");
-$accueil_small_images_path:"./../img/restaurants/small/";//prefixed
+$images_resto:(".img1":"LaPaletteDuGout.jpg",".img2":"LaNoteEnchantee.jpg",".img3":"AlaFrancaise.jpg",".img4":"LeDeliceDesSens.jpg");
+//$accueil_small_images_path:"./../img/restaurants/small/";//prefixed
 $accueil_small_images_path:"./img/restaurants/small/";
+$resto_small_images_path:"./../img/restaurants/small/";
 $items_fonctionnement: ("1":"__item1","2":"__item2","3":"__item3");
 $liste_restaurants: ("1":"carteresto1","2":"carteresto2","3":"carteresto3","4":"carteresto4");
 
@@ -32,6 +34,20 @@ $close-delay: $show-delay;
             height: 100%;
             border-top-right-radius: 15px;
             border-top-left-radius: 15px;
+        }
+    }
+}
+
+@mixin images_restaurant($img) {
+    @each $key,$value in $img {
+        & > #{$key}.resto {
+            position: absolute;
+            background-image: url($resto_small_images_path+$value);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 100%;
         }
     }
 }
@@ -90,13 +106,13 @@ $close-delay: $show-delay;
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 11pt;
-    //background-color: $color-background-black; 
+    background-color: white; 
     //border-radius: 15px;
     //margin: 300px auto;
 	display: flex;
 	//height: 100%;
-	align-items: center;
-	justify-content: center;
+	align-items: stretch;
+	justify-content: stretch;
     flex-direction: column-reverse;
     animation: darken $show-delay backwards;
 	.progress {
@@ -123,8 +139,8 @@ body {
 .second-skin-accueil {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: stretch;
+    align-items: stretch;
     //transform: translateX(-10%);
     animation: show .2s $show-delay both;
     //background-color: white;
@@ -134,8 +150,8 @@ body {
 .second-skin-resto {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: stretch;
+    align-items: stretch;
     //transform: translateX(-10%);
     //animation: show .2s $show-delay both;
     //background-color: white;
@@ -706,7 +722,7 @@ footer {
         flex-basis: 100%;
         display: flex;
         height: 200px;
-        @include images_accueil($images); 
+        @include images_restaurant($images_resto); 
     }
     &__item__carte {
         flex-basis: 100%;
@@ -794,28 +810,127 @@ footer {
     margin-top: 5px;
     margin-bottom: 4px;
 }
-.prix__entree, .prix__plat, .prix__dessert {
-    padding-right: 10px;
-}
-.entree .cflex, .plat .cflex, .dessert .cflex {
+
+
+.container {
     display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    background-color: white;
-    border-radius: 15px;
-    padding-left: 15px;
-    padding-right: 5px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    & > .prix__entree, .prix__plat, .prix__dessert {
-        font-weight: 600;
-        align-self: flex-end;
-    }
-}
-.choix__entree, .choix__plat, .choix__dessert {
-    flex-basis: 80%;
-    display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
 }
 
+.entree__detail, .plat__detail, .dessert__detail {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        min-width: 200px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        .nom {
+            //background-color: rosybrown;
+            flex-grow: 1;
+            flex-shrink: 2;
+            flex-basis: 60%;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin-left: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            line-height: 20px;
+        }
+        .prix {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 5%;
+            //background-color: plum;
+            padding-right: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            text-align: right;
+            align-self: stretch;
+            font-weight: 600;
+        }
+        .select__entree, .select__plat, .select__dessert {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            align-self: stretch;
+        }
+        cursor: pointer;
+        &:hover {
+            & > .select__entree, .select__plat, .select__dessert {
+                animation: selection .5s forwards;
+                animation-timing-function: cubic-bezier(.11,.95,.78,.68);
+                & > .cercle-blanc {
+                    animation: cercle 250ms forwards;
+                    & > .coche-verte {
+                        animation: coche 0.25s 0.1s forwards;
+                    }
+                }
+            } 
+        }
+}
+
+.cercle-blanc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 27px;
+    height: 27px;
+    border-radius: 13.5px;
+    background-color: white;
+}
+.coche-verte {
+    width: 15px;
+    height: 9px;
+    border-left: 3px $color-tertiary solid;
+    border-bottom: 3px $color-tertiary solid;
+    opacity: 0;
+}
+
+@keyframes selection {
+    0% {
+        transform: scaleX(0);
+        background-color: $color-tertiary;
+        z-index: 89;
+    } 
+    100% {
+        max-width: 50px;
+        min-width: 50px;
+        background-color: $color-tertiary;
+        transform: scaleX(1);
+        z-index: 89;
+    }
+}
+
+@keyframes cercle {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes coche {
+    0% {
+        transform: rotate(-360deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(-45deg);
+        opacity: 1;
+        
+    }
+}
