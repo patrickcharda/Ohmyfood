@@ -42,7 +42,7 @@ $close-delay: $show-delay;
     @each $key,$value in $img {
         & > #{$key}.resto {
             position: absolute;
-            background-image: url($resto_small_images_path+$value);
+            background-image: url($accueil_small_images_path+$value);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -296,11 +296,18 @@ p {
     &__item1 {
         flex-basis: 100%;
         background-color: #F7F7F7;
+        & .top-localisation {
+            z-index: 1;
+            height: 8px;
+            background: linear-gradient(to bottom, rgb(199, 195, 195), rgb(235, 232, 232));
+            margin-bottom: -3px;
+        }
         & .localisation {
             background-color: #EDEDED;
             text-align: center;
             padding-top: 15px;
             padding-bottom: 15px;
+            margin-top: 3px;
         }
         & .reservation__cflex {
             display: flex;
@@ -765,19 +772,10 @@ footer {
             margin-top: 20px;
             max-width: 150px;
             min-width: 130px;
-            //padding-left: 2px;
-            //padding-right: 2px;
             padding-top: 8px;
             padding-bottom: 8px;
             height: 35px;
             display: inline-block;
-            /*background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
-            font-weight: 600;
-            box-shadow: 1px 1px 5px 3px lightgrey; //lightgrey;20px 20px 50px 15px grey
-            &:hover {
-                background: linear-gradient(to bottom, lighten(#FF79DA, 5%), lighten(#9356DC, 5%));
-                box-shadow: 1px 1px 5px 3px lighten(lightgrey, 5%);
-            }*/
         }
     }
 }
@@ -822,7 +820,7 @@ footer {
     flex-basis: auto;
 }
 
-.entree__detail, .plat__detail, .dessert__detail {
+.entree__detail1, .entree__detail2,.entree__detail3, .plat__detail1, .plat__detail2, .plat__detail3,.dessert__detail1, .dessert__detail2,.dessert__detail3 {
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: auto;
@@ -833,11 +831,14 @@ footer {
         min-width: 200px;
         border-radius: 10px;
         margin-bottom: 15px;
+        transform-origin: top;
+        transform: scale(0);
+        //animation: open-entree1 $open-entree1 both, open-entree2 $open-entree2 both, open-entree3 $open-entree3 both; 
         .nom {
             //background-color: rosybrown;
             flex-grow: 1;
             flex-shrink: 2;
-            flex-basis: 60%;
+            flex-basis: 40%;
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
@@ -932,5 +933,57 @@ footer {
         transform: rotate(-45deg);
         opacity: 1;
         
+    }
+}
+$delay : 1s; //temps de fermeture
+$duree-animation : 1s; //temps d'ouverture
+
+$delay-entree1: $delay; // 1s
+$delay-entree2: $delay-entree1 + $duree-animation; // 2s
+$delay-entree3: $delay-entree2 + $duree-animation; // 3s
+$delay-plat1: $delay-entree3 + $duree-animation;
+$delay-plat2: $delay-plat1 + $duree-animation;
+$delay-plat3: $delay-plat2 + $duree-animation;
+$delay-dessert1: $delay-plat3 + $duree-animation;
+$delay-dessert2: $delay-dessert1 + $duree-animation;
+$delay-dessert3: $delay-dessert2 + $duree-animation;
+
+
+.entree__detail1 {
+    animation: open-menu $duree-animation $delay-entree1 forwards;
+}
+.entree__detail2 {
+    animation: open-menu $duree-animation $delay-entree2 forwards;
+}
+.entree__detail3 {
+    animation: open-menu $duree-animation $delay-entree3 forwards;
+}
+
+.plat__detail1 {
+    animation: open-menu $duree-animation $delay-plat1 forwards;
+}
+.plat__detail2 {
+    animation: open-menu $duree-animation $delay-plat2 forwards;
+}
+.plat__detail3 {
+    animation: open-menu $duree-animation $delay-plat3 forwards;
+}
+
+.dessert__detail1 {
+    animation: open-menu $duree-animation $delay-dessert1 forwards;
+}
+.dessert__detail2 {
+    animation: open-menu $duree-animation $delay-dessert2 forwards;
+}
+.dessert__detail3 {
+    animation: open-menu $duree-animation $delay-dessert3 forwards;
+}
+
+@keyframes open-menu {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
     }
 }
