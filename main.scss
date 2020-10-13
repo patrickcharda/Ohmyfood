@@ -88,8 +88,11 @@ $close-delay: $show-delay;
                     border-radius: 25px;
                     box-shadow: 3px 3px 7px rgb(172, 168, 168);
                     background-color: $color-background-gris;
-                    &.mauve {
+                    &.mauve:hover {
                         background-color: #F7F1FF;
+                        & > svg > path {
+                            fill: $color-primary;
+                        }
                     }
                 }
             }
@@ -715,7 +718,7 @@ footer {
     }
 }
 #icon-violet path{
-    fill: $color-primary;
+    //fill: $color-primary;
 }
 
 /*menu-restaurant*/
@@ -853,6 +856,7 @@ footer {
             flex-shrink: 1;
             flex-basis: 5%;
             //background-color: plum;
+            //transform-origin: right;
             padding-right: 5px;
             padding-top: 5px;
             padding-bottom: 5px;

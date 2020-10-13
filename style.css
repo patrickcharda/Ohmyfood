@@ -280,8 +280,11 @@ p {
   box-shadow: 3px 3px 7px #aca8a8;
   background-color: #F7F7F7;
 }
-.presentation__cflex__item2 .fct__cflex__item1 .cflex > .item--etape.mauve {
+.presentation__cflex__item2 .fct__cflex__item1 .cflex > .item--etape.mauve:hover {
   background-color: #F7F1FF;
+}
+.presentation__cflex__item2 .fct__cflex__item1 .cflex > .item--etape.mauve:hover > svg > path {
+  fill: #9356DC;
 }
 .presentation__cflex__item2 .fct__cflex__item2 {
   flex-basis: 100%;
@@ -316,8 +319,11 @@ p {
   box-shadow: 3px 3px 7px #aca8a8;
   background-color: #F7F7F7;
 }
-.presentation__cflex__item2 .fct__cflex__item2 .cflex > .item--etape.mauve {
+.presentation__cflex__item2 .fct__cflex__item2 .cflex > .item--etape.mauve:hover {
   background-color: #F7F1FF;
+}
+.presentation__cflex__item2 .fct__cflex__item2 .cflex > .item--etape.mauve:hover > svg > path {
+  fill: #9356DC;
 }
 .presentation__cflex__item2 .fct__cflex__item3 {
   flex-basis: 100%;
@@ -352,8 +358,11 @@ p {
   box-shadow: 3px 3px 7px #aca8a8;
   background-color: #F7F7F7;
 }
-.presentation__cflex__item2 .fct__cflex__item3 .cflex > .item--etape.mauve {
+.presentation__cflex__item2 .fct__cflex__item3 .cflex > .item--etape.mauve:hover {
   background-color: #F7F1FF;
+}
+.presentation__cflex__item2 .fct__cflex__item3 .cflex > .item--etape.mauve:hover > svg > path {
+  fill: #9356DC;
 }
 
 /*.img-_resto-mobile {
@@ -718,10 +727,6 @@ footer {
   text-decoration: none;
   color: white;
   margin-bottom: 3px;
-}
-
-#icon-violet path {
-  fill: #9356DC;
 }
 
 /*menu-restaurant*/
