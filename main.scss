@@ -935,8 +935,8 @@ footer {
         
     }
 }
-$delay : 1s; //temps de fermeture
-$duree-animation : 1s; //temps d'ouverture
+$delay : 0.1s; //temps de fermeture
+$duree-animation : 0.2s; //temps d'ouverture
 
 $delay-entree1: $delay; // 1s
 $delay-entree2: $delay-entree1 + $duree-animation; // 2s
