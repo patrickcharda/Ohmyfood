@@ -824,9 +824,7 @@ footer {
 }
 
 .entree__detail1, .entree__detail2,.entree__detail3, .plat__detail1, .plat__detail2, .plat__detail3,.dessert__detail1, .dessert__detail2,.dessert__detail3 {
-        flex-grow: 1;
-        flex-shrink: 1;
-        flex-basis: auto;
+        width: 98%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -834,14 +832,12 @@ footer {
         min-width: 200px;
         border-radius: 10px;
         margin-bottom: 15px;
+        position: relative;
         transform-origin: top;
         transform: scale(0);
         //animation: open-entree1 $open-entree1 both, open-entree2 $open-entree2 both, open-entree3 $open-entree3 both; 
         .nom {
-            //background-color: rosybrown;
-            flex-grow: 1;
-            flex-shrink: 2;
-            flex-basis: 40%;
+            width: 70%;
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
@@ -852,31 +848,35 @@ footer {
             line-height: 20px;
         }
         .prix {
-            flex-grow: 1;
-            flex-shrink: 1;
-            flex-basis: 5%;
+            position: absolute;
+            right: 10px;
             //background-color: plum;
-            //transform-origin: right;
-            padding-right: 5px;
+            transform-origin: right;
+            padding-right: 10px;
             padding-top: 5px;
             padding-bottom: 5px;
             padding-left: 5px;
             text-align: right;
             align-self: stretch;
             font-weight: 600;
+            width: 45px;
+            transform: scaleX(1);
+            transition: transform .3s ease-in-out;
         }
         .select__entree, .select__plat, .select__dessert {
+            max-width: 20%;
             display: flex;
             justify-content: center;
             align-items: center;
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
             align-self: stretch;
+            transform-origin: right;
         }
         cursor: pointer;
         &:hover {
             & > .select__entree, .select__plat, .select__dessert {
-                animation: selection .5s forwards;
+                animation: selection .4s forwards;
                 animation-timing-function: cubic-bezier(.11,.95,.78,.68);
                 & > .cercle-blanc {
                     animation: cercle 250ms forwards;
@@ -885,6 +885,12 @@ footer {
                     }
                 }
             } 
+            .nom {
+                width: 60%;
+            }
+            .prix {
+                transform: translateX(1px) translateX(-40px);
+            }
         }
 }
 
