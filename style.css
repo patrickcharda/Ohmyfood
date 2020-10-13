@@ -581,6 +581,28 @@ footer {
   text-decoration: none;
   z-index: 6;
 }
+.coeur-resto::after {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  transform-origin: top;
+  transform: scaleY(1);
+}
+.coeur-resto:hover::after {
+  animation: curtain 1.2s linear forwards;
+}
+.coeur-resto:hover > .creu2 {
+  animation: empty-heart 1500ms forwards;
+}
+.coeur-resto:hover > .plein2 {
+  animation: pink-fill-heart 600ms 100ms linear forwards;
+}
 
 /*
 #creu {
