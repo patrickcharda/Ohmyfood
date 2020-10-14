@@ -655,7 +655,7 @@ footer {
 
 .creu2 {
   position: relative;
-  opacity: 0.5;
+  opacity: 1;
   min-width: 15px;
   order: 2;
   z-index: 8888;
@@ -874,7 +874,7 @@ footer {
 }
 
 .entree__detail1, .entree__detail2, .entree__detail3, .plat__detail1, .plat__detail2, .plat__detail3, .dessert__detail1, .dessert__detail2, .dessert__detail3 {
-  width: 98%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -888,7 +888,7 @@ footer {
   cursor: pointer;
 }
 .entree__detail1 .nom, .entree__detail2 .nom, .entree__detail3 .nom, .plat__detail1 .nom, .plat__detail2 .nom, .plat__detail3 .nom, .dessert__detail1 .nom, .dessert__detail2 .nom, .dessert__detail3 .nom {
-  width: 70%;
+  width: 80%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -897,24 +897,26 @@ footer {
   padding-bottom: 5px;
   padding-left: 5px;
   line-height: 20px;
+  transition: width 0.3s linear;
 }
-.entree__detail1 .prix, .entree__detail2 .prix, .entree__detail3 .prix, .plat__detail1 .prix, .plat__detail2 .prix, .plat__detail3 .prix, .dessert__detail1 .prix, .dessert__detail2 .prix, .dessert__detail3 .prix {
+.entree__detail1 .nom .prix, .entree__detail2 .nom .prix, .entree__detail3 .nom .prix, .plat__detail1 .nom .prix, .plat__detail2 .nom .prix, .plat__detail3 .nom .prix, .dessert__detail1 .nom .prix, .dessert__detail2 .nom .prix, .dessert__detail3 .nom .prix {
   position: absolute;
   right: 10px;
+  top: 20px;
   transform-origin: right;
   padding-right: 10px;
   padding-top: 5px;
-  padding-bottom: 5px;
+  margin-bottom: 45px;
   padding-left: 5px;
   text-align: right;
   align-self: stretch;
   font-weight: 600;
   width: 45px;
   transform: scaleX(1);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s linear;
 }
 .entree__detail1 .select__entree, .entree__detail1 .select__plat, .entree__detail1 .select__dessert, .entree__detail2 .select__entree, .entree__detail2 .select__plat, .entree__detail2 .select__dessert, .entree__detail3 .select__entree, .entree__detail3 .select__plat, .entree__detail3 .select__dessert, .plat__detail1 .select__entree, .plat__detail1 .select__plat, .plat__detail1 .select__dessert, .plat__detail2 .select__entree, .plat__detail2 .select__plat, .plat__detail2 .select__dessert, .plat__detail3 .select__entree, .plat__detail3 .select__plat, .plat__detail3 .select__dessert, .dessert__detail1 .select__entree, .dessert__detail1 .select__plat, .dessert__detail1 .select__dessert, .dessert__detail2 .select__entree, .dessert__detail2 .select__plat, .dessert__detail2 .select__dessert, .dessert__detail3 .select__entree, .dessert__detail3 .select__plat, .dessert__detail3 .select__dessert {
-  max-width: 20%;
+  width: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -922,10 +924,11 @@ footer {
   border-bottom-right-radius: 10px;
   align-self: stretch;
   transform-origin: right;
+  transform: scale(0);
 }
 .entree__detail1:hover > .select__entree, .entree__detail1:hover .select__plat, .entree__detail1:hover .select__dessert, .entree__detail2:hover > .select__entree, .entree__detail2:hover .select__plat, .entree__detail2:hover .select__dessert, .entree__detail3:hover > .select__entree, .entree__detail3:hover .select__plat, .entree__detail3:hover .select__dessert, .plat__detail1:hover > .select__entree, .plat__detail1:hover .select__plat, .plat__detail1:hover .select__dessert, .plat__detail2:hover > .select__entree, .plat__detail2:hover .select__plat, .plat__detail2:hover .select__dessert, .plat__detail3:hover > .select__entree, .plat__detail3:hover .select__plat, .plat__detail3:hover .select__dessert, .dessert__detail1:hover > .select__entree, .dessert__detail1:hover .select__plat, .dessert__detail1:hover .select__dessert, .dessert__detail2:hover > .select__entree, .dessert__detail2:hover .select__plat, .dessert__detail2:hover .select__dessert, .dessert__detail3:hover > .select__entree, .dessert__detail3:hover .select__plat, .dessert__detail3:hover .select__dessert {
-  animation: selection 0.4s forwards;
-  animation-timing-function: cubic-bezier(0.11, 0.95, 0.78, 0.68);
+  animation: selection 0.3s forwards;
+  animation-timing-function: linear;
 }
 .entree__detail1:hover > .select__entree > .cercle-blanc, .entree__detail1:hover .select__plat > .cercle-blanc, .entree__detail1:hover .select__dessert > .cercle-blanc, .entree__detail2:hover > .select__entree > .cercle-blanc, .entree__detail2:hover .select__plat > .cercle-blanc, .entree__detail2:hover .select__dessert > .cercle-blanc, .entree__detail3:hover > .select__entree > .cercle-blanc, .entree__detail3:hover .select__plat > .cercle-blanc, .entree__detail3:hover .select__dessert > .cercle-blanc, .plat__detail1:hover > .select__entree > .cercle-blanc, .plat__detail1:hover .select__plat > .cercle-blanc, .plat__detail1:hover .select__dessert > .cercle-blanc, .plat__detail2:hover > .select__entree > .cercle-blanc, .plat__detail2:hover .select__plat > .cercle-blanc, .plat__detail2:hover .select__dessert > .cercle-blanc, .plat__detail3:hover > .select__entree > .cercle-blanc, .plat__detail3:hover .select__plat > .cercle-blanc, .plat__detail3:hover .select__dessert > .cercle-blanc, .dessert__detail1:hover > .select__entree > .cercle-blanc, .dessert__detail1:hover .select__plat > .cercle-blanc, .dessert__detail1:hover .select__dessert > .cercle-blanc, .dessert__detail2:hover > .select__entree > .cercle-blanc, .dessert__detail2:hover .select__plat > .cercle-blanc, .dessert__detail2:hover .select__dessert > .cercle-blanc, .dessert__detail3:hover > .select__entree > .cercle-blanc, .dessert__detail3:hover .select__plat > .cercle-blanc, .dessert__detail3:hover .select__dessert > .cercle-blanc {
   animation: cercle 250ms forwards;
@@ -934,10 +937,10 @@ footer {
   animation: coche 0.25s 0.1s forwards;
 }
 .entree__detail1:hover .nom, .entree__detail2:hover .nom, .entree__detail3:hover .nom, .plat__detail1:hover .nom, .plat__detail2:hover .nom, .plat__detail3:hover .nom, .dessert__detail1:hover .nom, .dessert__detail2:hover .nom, .dessert__detail3:hover .nom {
-  width: 60%;
+  width: 50%;
 }
-.entree__detail1:hover .prix, .entree__detail2:hover .prix, .entree__detail3:hover .prix, .plat__detail1:hover .prix, .plat__detail2:hover .prix, .plat__detail3:hover .prix, .dessert__detail1:hover .prix, .dessert__detail2:hover .prix, .dessert__detail3:hover .prix {
-  transform: translateX(1px) translateX(-40px);
+.entree__detail1:hover .nom .prix, .entree__detail2:hover .nom .prix, .entree__detail3:hover .nom .prix, .plat__detail1:hover .nom .prix, .plat__detail2:hover .nom .prix, .plat__detail3:hover .nom .prix, .dessert__detail1:hover .nom .prix, .dessert__detail2:hover .nom .prix, .dessert__detail3:hover .nom .prix {
+  transform: translateX(-40px);
 }
 
 .cercle-blanc {
