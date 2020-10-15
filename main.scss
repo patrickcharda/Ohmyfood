@@ -172,7 +172,7 @@ $delay-dessert3: $delay-dessert2 + $duree-animation;
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 11pt;
+    font-size: 10pt;
     background-color: white; 
 	display: flex;
 	align-items: stretch;
@@ -789,6 +789,7 @@ footer {
     padding-bottom: 0px;
     margin-bottom: -10px;
     font-weight: 400;
+    font-size: .9rem;
 }
 .moment {
     margin-bottom: 20px;
