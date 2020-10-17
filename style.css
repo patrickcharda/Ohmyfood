@@ -3,6 +3,11 @@
   box-sizing: border-box;
 }
 
+/*@mixin large {
+    @media only screen and (min-width:600px) {
+        @content;
+    }
+}*/
 .header__nav__logo {
   font-family: "Shrikhand", cursive;
 }
@@ -532,8 +537,8 @@ footer {
   display: flex;
   flex-wrap: nowrap;
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   top: 5px;
   right: 10px;
   text-decoration: none;
@@ -543,8 +548,8 @@ footer {
   content: "";
   position: absolute;
   opacity: 1;
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   background-color: white;
   top: 0px;
   left: 0px;
@@ -574,8 +579,8 @@ footer {
   display: flex;
   flex-wrap: nowrap;
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   top: 30px;
   right: 34px;
   text-decoration: none;
@@ -1039,6 +1044,84 @@ footer {
   }
   to {
     transform: scaleY(1);
+  }
+}
+@media only screen and (min-width: 620px) {
+  body {
+    align-items: center;
+    font-size: 11pt;
+  }
+
+  .second-skin-accueil {
+    max-width: 900px;
+    align-items: center;
+  }
+
+  .second-skin-resto {
+    max-width: 900px;
+    align-items: center;
+  }
+
+  .restaurants__cflex {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .restaurants__cflex__item--carteresto1 {
+    flex-basis: 39%;
+  }
+  .restaurants__cflex__item--carteresto1 .cflex__item--texte {
+    height: 60px;
+  }
+  .restaurants__cflex__item--carteresto1 .cflex__item--texte .cflex__item1--identite .cflex {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .restaurants__cflex__item--carteresto1 .cflex__item--texte .cflex__item1--identite .cflex .nom_resto, .restaurants__cflex__item--carteresto1 .cflex__item--texte .cflex__item1--identite .cflex .adresse_resto {
+    flex-basis: auto;
+  }
+
+  .menu__item__photo {
+    height: 300px;
+  }
+
+  .menu__item__carte .cflex__item__enseigne {
+    text-align: center;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .menu__item__carte .cflex__item__moment .cflex__item__entrees,
+.menu__item__carte .cflex__item__moment .cflex__item__plats,
+.menu__item__carte .cflex__item__moment .cflex__item__desserts {
+    flex-basis: 50%;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .presentation__cflex__item2--titre h3.titres {
+    text-align: center;
+  }
+  .presentation__cflex__item2 .fct__cflex {
+    flex-wrap: nowrap;
+  }
+
+  .restaurants__cflex__item--carteresto1 {
+    flex-basis: 35%;
+    margin-bottom: 20px;
+  }
+  .restaurants__cflex__item--titre > h3.titres {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 1125px) {
+  .second-skin-resto {
+    max-width: 1200px;
+  }
+
+  .menu__item__carte .cflex__item__moment .cflex__item__entrees,
+.menu__item__carte .cflex__item__moment .cflex__item__plats,
+.menu__item__carte .cflex__item__moment .cflex__item__desserts {
+    flex-basis: 33.33%;
   }
 }
 
