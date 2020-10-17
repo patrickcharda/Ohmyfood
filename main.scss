@@ -992,7 +992,7 @@ footer {
     }
 }
 
-@media only screen and (min-width:600px) {
+@media only screen and (min-width:620px) {
     body {
         align-items: center;
         font-size: 11pt;
@@ -1006,13 +1006,22 @@ footer {
         align-items:center;
         justify-content: space-around;
         &__item--carteresto1 {
-            flex-basis: 35%;
+            flex-basis: 39%;
+            //min-width: 290px;
             .cflex__item--texte {
                 height: 60px;
+                .cflex__item1--identite .cflex {
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    .nom_resto, .adresse_resto {
+                        flex-basis: auto;
+                    }
+                }
             }
         }
     }
 }
+
 @media only screen and (min-width:800px) {
     .presentation__cflex__item2 {
         &--titre {

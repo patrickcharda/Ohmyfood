@@ -1046,7 +1046,7 @@ footer {
     transform: scaleY(1);
   }
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 620px) {
   body {
     align-items: center;
     font-size: 11pt;
@@ -1063,10 +1063,17 @@ footer {
     justify-content: space-around;
   }
   .restaurants__cflex__item--carteresto1 {
-    flex-basis: 35%;
+    flex-basis: 39%;
   }
   .restaurants__cflex__item--carteresto1 .cflex__item--texte {
     height: 60px;
+  }
+  .restaurants__cflex__item--carteresto1 .cflex__item--texte .cflex__item1--identite .cflex {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .restaurants__cflex__item--carteresto1 .cflex__item--texte .cflex__item1--identite .cflex .nom_resto, .restaurants__cflex__item--carteresto1 .cflex__item--texte .cflex__item1--identite .cflex .adresse_resto {
+    flex-basis: auto;
   }
 }
 @media only screen and (min-width: 800px) {
