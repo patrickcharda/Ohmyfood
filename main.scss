@@ -40,6 +40,12 @@ $delay-dessert3: $delay-dessert2 + $duree-animation;
 
 // mixins
 
+/*@mixin large {
+    @media only screen and (min-width:600px) {
+        @content;
+    }
+}*/
+
 @mixin images_accueil($img) {
     @each $key,$value in $img {
         & > #{$key} {
@@ -196,7 +202,7 @@ body {
 			transform: scaleX(0.5);
 			animation: progress-elem $prog-bar-dur $prog-bar-delay both; // faire avancer la barre de chargement
 		}
-	}
+    }
 }
 
 .second-skin-accueil {
@@ -496,8 +502,8 @@ footer {
     display: flex;
     flex-wrap: nowrap;
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
     top: 5px;
     right : 10px;
     text-decoration: none;
@@ -506,8 +512,8 @@ footer {
         content:"";
         position: absolute;
         opacity: 1;
-        width: 15px;
-        height: 15px;
+        width: 13px;
+        height: 13px;
         background-color: white;
         top: 0px;
         left : 0px;
@@ -541,8 +547,8 @@ footer {
     display: flex;
     flex-wrap: nowrap;
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
     top: 30px;
     right : 34px;
     text-decoration: none;
@@ -984,4 +990,50 @@ footer {
     to {
         transform: scaleY(1);
     }
+}
+
+@media only screen and (min-width:600px) {
+    body {
+        align-items: center;
+        font-size: 11pt;
+    }
+    .second-skin-accueil{
+        max-width: 900px;
+        align-items: center;
+    } 
+    .restaurants__cflex {
+        flex-direction: row;
+        align-items:center;
+        justify-content: space-around;
+        &__item--carteresto1 {
+            flex-basis: 35%;
+            .cflex__item--texte {
+                height: 60px;
+            }
+        }
+    }
+}
+@media only screen and (min-width:800px) {
+    .presentation__cflex__item2 {
+        &--titre {
+            h3.titres {
+            text-align: center;
+            }
+        }
+        .fct__cflex {
+            flex-wrap: nowrap;
+        }
+    }
+
+    .restaurants__cflex {
+        &__item--carteresto1 {
+            flex-basis: 35%;
+            margin-bottom: 20px;
+        }
+        &__item--titre {
+            & > h3.titres {
+            text-align: center;
+            }
+        }
+    } 
 }
