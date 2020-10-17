@@ -1057,6 +1057,11 @@ footer {
     align-items: center;
   }
 
+  .second-skin-resto {
+    max-width: 900px;
+    align-items: center;
+  }
+
   .restaurants__cflex {
     flex-direction: row;
     align-items: center;
@@ -1075,6 +1080,22 @@ footer {
   .restaurants__cflex__item--carteresto1 .cflex__item--texte .cflex__item1--identite .cflex .nom_resto, .restaurants__cflex__item--carteresto1 .cflex__item--texte .cflex__item1--identite .cflex .adresse_resto {
     flex-basis: auto;
   }
+
+  .menu__item__photo {
+    height: 300px;
+  }
+
+  .menu__item__carte .cflex__item__enseigne {
+    text-align: center;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .menu__item__carte .cflex__item__moment .cflex__item__entrees,
+.menu__item__carte .cflex__item__moment .cflex__item__plats,
+.menu__item__carte .cflex__item__moment .cflex__item__desserts {
+    flex-basis: 50%;
+  }
 }
 @media only screen and (min-width: 800px) {
   .presentation__cflex__item2--titre h3.titres {
@@ -1090,6 +1111,17 @@ footer {
   }
   .restaurants__cflex__item--titre > h3.titres {
     text-align: center;
+  }
+}
+@media only screen and (min-width: 1125px) {
+  .second-skin-resto {
+    max-width: 1200px;
+  }
+
+  .menu__item__carte .cflex__item__moment .cflex__item__entrees,
+.menu__item__carte .cflex__item__moment .cflex__item__plats,
+.menu__item__carte .cflex__item__moment .cflex__item__desserts {
+    flex-basis: 33.33%;
   }
 }
 
