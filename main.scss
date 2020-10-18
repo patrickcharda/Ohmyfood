@@ -27,7 +27,7 @@ $close-delay: $show-delay;
 // variables pour l'animation des menus déroulants
 
 $delay : 0.1s; 
-$duree-animation : 0.2s; 
+$duree-animation : 0.1s; 
 $delay-entree1: $delay; 
 $delay-entree2: $delay-entree1 + $duree-animation; 
 $delay-entree3: $delay-entree2 + $duree-animation; 
@@ -187,16 +187,18 @@ body {
     animation: darken $show-delay backwards; //mettre un fond noir au chargement pdt le déoulement de l'animation
 	.progress {
         position: absolute;
-		width: 80%;
-        height: 4vh;
-        top: 50%;
-        left: 10%;
-		border: 2px solid $color-secondary;
+        opacity: 0.3;
+		width: 50%;
+        height: 3vh;
+        bottom: 10%;
+        left: 25%;
+        border: 2px solid white;
+        background-color: white;
 		padding: 0.25rem;
         animation: close-progress 200ms $close-delay forwards; //faire disparaître la barre de progression une fois remplie
 		&__elem {
-			height: 100%;
-			background: $color-primary;
+            height: 100%;
+			background: $color-tertiary;
 			height: 100%;
 			transform-origin: left;
 			transform: scaleX(0.5);
@@ -282,6 +284,94 @@ footer {
 
 /* animations en lien avec le chargement de la page d'accueil */
 
+.puzzle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 20%;
+    //left: 25%;
+    animation: close-progress 200ms $close-delay forwards;
+}
+.puzzle .word {
+    display: flex;
+    transform: scale(.7);
+    animation: spin 1s 1s forwards;
+  }
+  
+  .puzzle .word .letter {
+    width: 3em;
+    height: 3em;
+    margin: 0.10em;
+    font-weight: 500;
+    background-color: $color-primary;
+    color: white;
+    text-align: center;
+    user-select: none;
+    position: relative;
+    animation: swap-right 1s forwards;
+  }
+  
+  .puzzle .word .letter:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  
+  .puzzle .word .letter:last-child {
+    margin-right: auto;
+  }
+  
+  .puzzle .word .pivot {
+    background-color: $color-secondary;
+  }
+  
+  .puzzle .word .pivot,
+  .puzzle .word .pivot ~ .letter {
+    animation: swap-left 1s forwards;
+  }
+
+  @keyframes swap-right {
+    0% {
+      order: 1;
+    }
+    33% {
+      order: 1;
+      border-radius: 0em;
+    }
+    66% {
+        border-radius: 1.5em;
+    }
+    100% {
+      order: 2;
+      right: 50%;
+      border-radius: 1.5em;
+    }
+  }
+  @keyframes swap-left {
+    0% {
+      order: 2;
+    }
+    33% {
+      order: 2;
+      border-radius: 0em;
+    }
+    66% {
+        border-radius: 1.5em;
+    }
+    100% {
+      order: 1;
+      left: 50%;
+      border-radius: 1.5em;
+    }
+  }
+  @keyframes spin {
+    100% {
+      transform: scale(1.2) rotate(360deg);
+    }
+  }
+
+
 @keyframes darken {
 	0% {
 		background-color: black;
@@ -331,6 +421,7 @@ footer {
         transform: scale(0);
     }
 }
+
 
 /* *********************************** */
 
@@ -1077,5 +1168,7 @@ footer {
         flex-basis: 33.33%;
     }
 }
+
+
  
     
