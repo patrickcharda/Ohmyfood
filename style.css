@@ -72,19 +72,19 @@ body {
   align-items: stretch;
   justify-content: stretch;
   flex-direction: column-reverse;
-  animation: darken 2600ms backwards;
+  animation: darkvador 3300ms backwards;
 }
 body .progress {
   position: absolute;
   opacity: 0.3;
   width: 50%;
   height: 3vh;
-  bottom: 10%;
+  bottom: 5%;
   left: 25%;
   border: 2px solid white;
   background-color: white;
   padding: 0.25rem;
-  animation: close-progress 200ms 2600ms forwards;
+  animation: close-progress 200ms 3300ms forwards;
 }
 body .progress__elem {
   height: 100%;
@@ -92,7 +92,7 @@ body .progress__elem {
   height: 100%;
   transform-origin: left;
   transform: scaleX(0.5);
-  animation: progress-elem 2000ms 300ms both;
+  animation: progress-elem 3000ms 150ms both;
 }
 
 .second-skin-accueil {
@@ -100,7 +100,7 @@ body .progress__elem {
   flex-direction: column;
   justify-content: stretch;
   align-items: stretch;
-  animation: show 0.2s 2600ms both;
+  animation: show 0.2s 3300ms both;
 }
 
 .second-skin-resto {
@@ -175,18 +175,19 @@ footer {
 .puzzle {
   position: absolute;
   width: 80%;
-  height: 100%;
-  top: 20%;
-  overflow-x: hidden;
+  height: 80%;
+  top: 10%;
+  margin-bottom: auto;
+  overflow: hidden;
   left: 10%;
-  animation: close-progress 200ms 2600ms forwards;
+  animation: close-progress 200ms 3300ms forwards;
 }
 
 .puzzle .word {
   display: flex;
   overflow-x: hidden;
-  transform: scale(0.7);
-  animation: spin 1s 1s forwards;
+  transform: scale(0.9);
+  animation: spin 1.5s 1s forwards;
 }
 
 .puzzle .word .letter {
@@ -194,12 +195,13 @@ footer {
   height: 3em;
   margin: 0.1em;
   font-weight: 500;
-  background-color: #9356DC;
-  color: white;
+  background-color: #FF79DA;
+  font-family: "Shrikhand", cursive;
+  color: black;
   text-align: center;
   user-select: none;
   position: relative;
-  animation: swap-right 1s forwards, square 0.5s 1.5s forwards;
+  animation: swap-right 2s forwards;
 }
 
 .puzzle .word .letter:before {
@@ -214,12 +216,12 @@ footer {
 }
 
 .puzzle .word .pivot {
-  background-color: #FF79DA;
+  background-color: #9356DC;
 }
 
 .puzzle .word .pivot,
 .puzzle .word .pivot ~ .letter {
-  animation: swap-left 1s forwards, square 0.5s 1.5s forwards;
+  animation: swap-left 1s forwards;
 }
 
 @keyframes swap-right {
@@ -227,7 +229,6 @@ footer {
     order: 1;
   }
   33% {
-    order: 1;
     border-radius: 0em;
   }
   66% {
@@ -244,7 +245,6 @@ footer {
     order: 2;
   }
   33% {
-    order: 2;
     border-radius: 0em;
   }
   66% {
@@ -260,36 +260,48 @@ footer {
   /*10%, 50% {
     transform: scale(.5) ;
   }*/
+  30% {
+    perspective: 25px;
+    transform: rotateZ(360deg);
+  }
+  55% {
+    perspective: none;
+    transform: scale(0.5);
+  }
+  65% {
+    perspective: 15px;
+    transform: rotateZ(360deg) scale(0.9);
+  }
+  70% {
+    perspective: none;
+    transform: scale(0.4);
+  }
   100% {
-    transform: scale(0.8) rotate(360deg);
+    transform: scale(1);
   }
 }
 @keyframes square {
   50%, 100% {
-    transform: scale(0.8);
     border-radius: 0em;
   }
 }
-@keyframes darken {
-  0% {
-    background-color: black;
-  }
-  45% {
-    background-color: #10392f;
-  }
-  65% {
-    background-color: #5dd1b5;
-  }
-  75% {
-    background-color: #99E2D0;
-  }
+@keyframes darkvador {
   100% {
-    background-color: white;
+    background-color: black;
   }
 }
 @keyframes show {
   0% {
     transform: translateX(-9999px);
+  }
+  25% {
+    transform: translateX(-75%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  75% {
+    transform: translateX(-25%);
   }
   100% {
     transform: translateX(0);
@@ -308,12 +320,16 @@ footer {
   }
   46% {
     transform: scaleX(0.81);
-    animation-timing-function: cubic-bezier(0.25, 0.25, 1, 1);
     background-color: #10392f;
   }
+  86% {
+    transform: scaleX(0.91);
+    background-color: #32b091;
+  }
   100% {
+    animation-timing-function: cubic-bezier(0.37, 0.88, 0.7, 1.13);
     transform: scaleX(1);
-    background-color: white;
+    background-color: #71d7be;
   }
 }
 @keyframes close-progress {
