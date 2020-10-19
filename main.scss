@@ -19,8 +19,8 @@ $liste_restaurants: ("1":"carteresto1","2":"carteresto2","3":"carteresto3","4":"
 
 // variables pour l'animation au chargement de la page d'accueil (loader)
 
-$prog-bar-dur: 1000ms;
-$prog-bar-delay: 150ms;
+$prog-bar-dur: 2000ms;
+$prog-bar-delay: 300ms;
 $show-delay: $prog-bar-dur + $prog-bar-delay * 2;
 $close-delay: $show-delay;
 
@@ -176,6 +176,12 @@ $delay-dessert3: $delay-dessert2 + $duree-animation;
     font-weight: 700;
 }
 
+.body-two {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+}
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 10pt;
@@ -212,13 +218,16 @@ body {
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
-    animation: show .2s $show-delay both; // affichage du contenu page d'accueil au bout de 2 secondes
+    animation: show 0.2s $show-delay both; // affichage du contenu page d'accueil au bout de 2 secondes
+    //animation: darken $show-delay backwards; //mettre un fond noir au chargement pdt le déoulement de l'animation
+
 }
 .second-skin-resto {
     display: flex;
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
+    //animation: show 0.2s forwards;
 }
 
 .main {
@@ -232,9 +241,6 @@ p {
     margin-bottom: 0px;
 }
 .main-button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
     text-decoration: none;
     position: relative;
     color: $color-background-blanc;
@@ -286,14 +292,16 @@ footer {
 
 .puzzle {
     position: absolute;
-    width: 100%;
+    width: 80%;
     height: 100%;
     top: 20%;
-    //left: 25%;
+    overflow-x: hidden;
+    left: 10%;
     animation: close-progress 200ms $close-delay forwards;
 }
 .puzzle .word {
     display: flex;
+    overflow-x: hidden;
     transform: scale(.7);
     animation: spin 1s 1s forwards;
   }
@@ -308,7 +316,7 @@ footer {
     text-align: center;
     user-select: none;
     position: relative;
-    animation: swap-right 1s forwards;
+    animation: swap-right 1s forwards, square 0.5s 1.5s forwards;
   }
   
   .puzzle .word .letter:before {
@@ -328,7 +336,7 @@ footer {
   
   .puzzle .word .pivot,
   .puzzle .word .pivot ~ .letter {
-    animation: swap-left 1s forwards;
+    animation: swap-left 1s forwards, square 0.5s 1.5s forwards;
   }
 
   @keyframes swap-right {
@@ -366,21 +374,36 @@ footer {
     }
   }
   @keyframes spin {
+    /*10%, 50% {
+      transform: scale(.5) ;
+    }*/
     100% {
-      transform: scale(1.2) rotate(360deg);
+        transform: scale(.8) rotate(360deg);
     }
+  }
+  @keyframes square {
+      50%, 100% {
+          transform: scale(.8);
+          border-radius: 0em;
+      }
   }
 
 
 @keyframes darken {
 	0% {
-		background-color: black;
-    }
-    95% {
         background-color: black;
     }
+    45% {
+        background-color: darken($color-tertiary, 60%);
+    }
+    65% {
+        background-color: darken($color-tertiary,15%);
+    }
+    75% {
+        background-color: $color-tertiary;
+    }
 	100% {
-		background-color: white;
+        background-color: white;
 	}
 }
 
@@ -406,10 +429,12 @@ footer {
 	}
 	46% {
 		transform: scaleX(0.81);
-		animation-timing-function: cubic-bezier(0.25, 0.25, 1);
+        animation-timing-function: cubic-bezier(0.25, 0.25, 1, 1);
+        background-color: darken($color-tertiary, 60%);
 	}
 	100% {
         transform: scaleX(1);
+        background-color: white;
 	}
 }
 
