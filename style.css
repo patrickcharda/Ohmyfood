@@ -57,6 +57,13 @@
   font-weight: 700;
 }
 
+.body-two {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 10pt;
@@ -65,7 +72,7 @@ body {
   align-items: stretch;
   justify-content: stretch;
   flex-direction: column-reverse;
-  animation: darken 1300ms backwards;
+  animation: darken 2600ms backwards;
 }
 body .progress {
   position: absolute;
@@ -77,7 +84,7 @@ body .progress {
   border: 2px solid white;
   background-color: white;
   padding: 0.25rem;
-  animation: close-progress 200ms 1300ms forwards;
+  animation: close-progress 200ms 2600ms forwards;
 }
 body .progress__elem {
   height: 100%;
@@ -85,7 +92,7 @@ body .progress__elem {
   height: 100%;
   transform-origin: left;
   transform: scaleX(0.5);
-  animation: progress-elem 1000ms 150ms both;
+  animation: progress-elem 2000ms 300ms both;
 }
 
 .second-skin-accueil {
@@ -93,7 +100,7 @@ body .progress__elem {
   flex-direction: column;
   justify-content: stretch;
   align-items: stretch;
-  animation: show 0.2s 1300ms both;
+  animation: show 0.2s 2600ms both;
 }
 
 .second-skin-resto {
@@ -116,9 +123,6 @@ p {
 }
 
 .main-button {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
   text-decoration: none;
   position: relative;
   color: #fff;
@@ -170,14 +174,17 @@ footer {
 /* animations en lien avec le chargement de la page d'accueil */
 .puzzle {
   position: absolute;
-  width: 100%;
+  width: 80%;
   height: 100%;
   top: 20%;
-  animation: close-progress 200ms 1300ms forwards;
+  overflow-x: hidden;
+  left: 10%;
+  animation: close-progress 200ms 2600ms forwards;
 }
 
 .puzzle .word {
   display: flex;
+  overflow-x: hidden;
   transform: scale(0.7);
   animation: spin 1s 1s forwards;
 }
@@ -192,7 +199,7 @@ footer {
   text-align: center;
   user-select: none;
   position: relative;
-  animation: swap-right 1s forwards;
+  animation: swap-right 1s forwards, square 0.5s 1.5s forwards;
 }
 
 .puzzle .word .letter:before {
@@ -212,7 +219,7 @@ footer {
 
 .puzzle .word .pivot,
 .puzzle .word .pivot ~ .letter {
-  animation: swap-left 1s forwards;
+  animation: swap-left 1s forwards, square 0.5s 1.5s forwards;
 }
 
 @keyframes swap-right {
@@ -250,16 +257,31 @@ footer {
   }
 }
 @keyframes spin {
+  /*10%, 50% {
+    transform: scale(.5) ;
+  }*/
   100% {
-    transform: scale(1.2) rotate(360deg);
+    transform: scale(0.8) rotate(360deg);
+  }
+}
+@keyframes square {
+  50%, 100% {
+    transform: scale(0.8);
+    border-radius: 0em;
   }
 }
 @keyframes darken {
   0% {
     background-color: black;
   }
-  95% {
-    background-color: black;
+  45% {
+    background-color: #10392f;
+  }
+  65% {
+    background-color: #5dd1b5;
+  }
+  75% {
+    background-color: #99E2D0;
   }
   100% {
     background-color: white;
@@ -286,10 +308,12 @@ footer {
   }
   46% {
     transform: scaleX(0.81);
-    animation-timing-function: cubic-bezier(0.25, 0.25, 1);
+    animation-timing-function: cubic-bezier(0.25, 0.25, 1, 1);
+    background-color: #10392f;
   }
   100% {
     transform: scaleX(1);
+    background-color: white;
   }
 }
 @keyframes close-progress {
