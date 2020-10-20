@@ -1,0 +1,77 @@
+@mixin images_accueil($img) {
+    @each $key,$value in $img {
+        & > #{$key} {
+            position: absolute;
+            background-image: url($accueil_small_images_path+$value);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+        }
+    }
+}
+
+@mixin images_restaurant($img) {
+    @each $key,$value in $img {
+        & > #{$key}.resto {
+            position: absolute;
+            background-image: url($accueil_small_images_path+$value);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@mixin fonctionnement($etapes) {
+    @each $key,$value in $etapes {
+        &#{$value} {
+            flex-basis: 100%;
+            @if ($key == "3") {
+                margin-bottom: 20px;
+            } @else {
+            margin-bottom: 5px;
+            }
+            & .cflex {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                & > .item--numero {
+                    color: white;
+                    background-color: $color-primary;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 12.5px;
+                    font-size: 11px;
+                    font-weight: 600;
+                    padding-left: 9px;
+                    padding-top: 7px;
+                    z-index: 3;
+                }
+                & > .item--etape {
+                    height: 60px;
+                    width: 235px;
+                    padding-top: 22px;
+                    padding-left: 25px;
+                    padding-right: 10px;
+                    margin-left: -12px;
+                    border-radius: 25px;
+                    box-shadow: 3px 3px 7px rgb(172, 168, 168);
+                    background-color: $color-background-gris;
+                    &.mauve:hover {
+                        background-color: #F7F1FF;
+                        & > svg > path {
+                            fill: $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
