@@ -4,13 +4,13 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap" rel="stylesheet"> 
-    <link rel='shortcut icon' href='logos/favicon.ico'>
+    <!--<link rel='shortcut icon' href='logos/favicon.ico'>-->
     <script src="https://kit.fontawesome.com/8c9711250f.js" crossorigin="anonymous"></script>
-    <link rel='stylesheet' type='text/css' href='style.css'>
+    <link rel='stylesheet' type='text/css' href='./prefixed/style.css'>
 	<title>Ohmyfood</title>
 </head>
 <body>
-    <div class="second-skin">
+    <div class="second-skin-accueil">
             <header class="header">
                 <nav class="header__nav">
                     <div class="header__nav__logo">
@@ -23,13 +23,15 @@
             <section class="presentation">
                 <div class="presentation__cflex">
                     <div class= "presentation__cflex__item1"><!--concept-->
+                        <div class="presentation__cflex__item1 top-localisation"></div>
                         <div class="presentation__cflex__item1 localisation">
+                            <a href="https://osm.org/go/0BPKAc3dE--" class="locate-link"></a>
                             <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Paris, Belleville
                         </div>
                         <div class="presentation__cflex__item1 reservation__cflex">
                             <div class="titres">Réservez le menu qui vous convient</div>
-                            <p>Découvrez des restaurants d'exception,</br> sélectionnés par nos soins</p>
-                            <button class="main-button"><a href="#section_restaurants" class="button-link"></a>Explorer nos restaurants</button>
+                            <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
+                            <a href="#section_restaurants" class="main-button">Explorer nos restaurants</a>
                         </div>
                     </div>
                     <div class= "presentation__cflex__item2"><!--Fonctionnement-->
@@ -42,8 +44,8 @@
                                     <div class="item--numero">
                                         1
                                     </div>
-                                    <div class="item--etape">
-                                        <div><i class="fas fa-mobile-alt"></i>&emsp;<span>Choisissez un restaurant</span></div>
+                                    <div class="item--etape mauve">
+                                        <i class="fas fa-mobile-alt"></i>&emsp;<span>Choisissez un restaurant</span>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +54,7 @@
                                     <div class="item--numero">
                                         2
                                     </div>
-                                    <div class="item--etape">
+                                    <div class="item--etape mauve">
                                         <i class="fas fa-list"></i>&emsp;<span>Composez votre menu</span>
                                     </div>
                                 </div>
@@ -63,7 +65,7 @@
                                         3
                                     </div>
                                     <div class="item--etape mauve">
-                                        <i class="fas fa-store" id="icon-violet"></i>&emsp;<span>Dégustez au restaurant</span>
+                                        <i class="fas fa-store" ></i>&emsp;<span>Dégustez au restaurant</span>
                                     </div>
                                 </div>
                             </div>
@@ -75,14 +77,14 @@
             <section class="restaurants" id="section_restaurants">
                 <div class="restaurants__cflex">
                     <div class="restaurants__cflex__item--titre titres">
-                        <span class="titres">Restaurants</span>
+                        <h3 class="titres">Restaurants</h3>
                     </div>
                     <div class="restaurants__cflex__item--carteresto1"><!--resto1-->
                         <a href="restaurants/lapalettedugout.html" class="click-photo" target="_blank"></a>
                         <div class="restaurants__cflex__item--carteresto1 cflex">
                             <div class="restaurants__cflex__item--carteresto1 cflex__item--image">
                                 <div class="nouveau">Nouveau</div>
-                                <!--<img class="img--resto-mobile" src="img/restaurants/LaPaletteDuGout.jpg" alt="Restaurant La Palette du goût"/>-->
+                                <!--<img class="img-_resto-mobile" src="img/restaurants/LaPaletteDuGout.jpg" alt="Restaurant La Palette du goût"/>-->
                                 <div id="img1" title="photo de plat du restaurant la palette du goût"></div>
                             </div>
                             <div class="restaurants__cflex__item--carteresto1 cflex__item--texte">
@@ -99,8 +101,17 @@
                                     </div>
                                     <div class="restaurants__cflex__item--carteresto1 cflex__item--texte cflex__item2--coeur">
                                         <div class="coeur">
-                                            <a href="https://developer.mozilla.org/en-US/docs/Learn" class="click-coeur" target="_blank"></a>
-                                            <i class="far fa-heart"></i>
+
+                                            <svg class="svg-inline--fa fa-heart fa-w-16 creu2" aria-hidden="true" focusable="true" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" data-fa-i2svg="">
+                                                <path fill="currentColor" d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z">
+                                                </path>
+                                            </svg>
+                                            <!--<a href="https://developer.mozilla.org/en-US/docs/Learn" class="click-coeur" target="_blank"></a>-->
+                                            <svg class="svg-inline--fa fa-heart fa-w-16 plein2" aria-hidden="true" focusable="true" data-prefix="fas" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                <path fill="pink" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z">
+                                                </path>
+                                            </svg>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -112,7 +123,7 @@
                         <div class="restaurants__cflex__item--carteresto1 cflex">
                             <div class="restaurants__cflex__item--carteresto1 cflex__item--image">
                                 <div class="nouveau">Nouveau</div>
-                                <!--<img class="img--resto-mobile" src="img/restaurants/small/LaNoteEnchantee.jpg" alt="Restaurant La note enchantée"/>-->
+                                <!--<img class="img-_resto-mobile" src="img/restaurants/small/LaNoteEnchantee.jpg" alt="Restaurant La note enchantée"/>-->
                                 <div id="img2" title="photo de plat du restaurant la note enchantée"></div>
                             </div>
                             <div class="restaurants__cflex__item--carteresto1 cflex__item--texte">
@@ -129,8 +140,16 @@
                                     </div>
                                     <div class="restaurants__cflex__item--carteresto1 cflex__item--texte cflex__item2--coeur">
                                         <div class="coeur">
-                                            <a href="https://developer.mozilla.org/en-US/docs/Learn" class="click-coeur" target="_blank"></a>
-                                            <i class="far fa-heart"></i>
+                                            <svg class="svg-inline--fa fa-heart fa-w-16 creu2" aria-hidden="true" focusable="true" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" data-fa-i2svg="">
+                                                <path fill="currentColor" d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z">
+                                                </path>
+                                            </svg>
+                                            
+                                            <!--<a href="https://developer.mozilla.org/en-US/docs/Learn" class="click-coeur" target="_blank"></a>-->
+                                            <svg class="svg-inline--fa fa-heart fa-w-16 plein2" aria-hidden="true" focusable="true" data-prefix="fas" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                <path fill="pink" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z">
+                                                </path>
+                                            </svg>
                                         </div>
                                     </div>
                                 </div>
@@ -141,7 +160,7 @@
                         <a href="restaurants/alafrancaise.html" class="click-photo" target="_blank"></a>
                         <div class="restaurants__cflex__item--carteresto1 cflex">
                             <div class="restaurants__cflex__item--carteresto1 cflex__item--image">
-                                <!--<img class="img--resto-mobile" src="img/restaurants/small/AlaFrancaise.jpg" alt="Restaurant A La Française"/>-->
+                                <!--<img class="img-_resto-mobile" src="img/restaurants/small/AlaFrancaise.jpg" alt="Restaurant A La Française"/>-->
                                 <div id="img3" title="photo de plat du restaurant a la française"></div>
                             </div>
                             <div class="restaurants__cflex__item--carteresto1 cflex__item--texte">
@@ -158,8 +177,16 @@
                                     </div>
                                     <div class="restaurants__cflex__item--carteresto1 cflex__item--texte cflex__item2--coeur">
                                         <div class="coeur">
-                                            <a href="https://developer.mozilla.org/en-US/docs/Learn" class="click-coeur" target="_blank"></a>
-                                            <i class="far fa-heart"></i>
+                                            <svg class="svg-inline--fa fa-heart fa-w-16 creu2" aria-hidden="true" focusable="true" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" data-fa-i2svg="">
+                                                <path fill="currentColor" d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z">
+                                                </path>
+                                            </svg>
+                                            
+                                            <!--<a href="https://developer.mozilla.org/en-US/docs/Learn" class="click-coeur" target="_blank"></a>-->
+                                            <svg class="svg-inline--fa fa-heart fa-w-16 plein2" aria-hidden="true" focusable="true" data-prefix="fas" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                <path fill="pink" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z">
+                                                </path>
+                                            </svg>
                                         </div>
                                     </div>
                                 </div>
@@ -170,7 +197,7 @@
                         <a href="restaurants/ledelicedessens.html" class="click-photo" target="_blank"></a>
                         <div class="restaurants__cflex__item--carteresto1 cflex">
                             <div class="restaurants__cflex__item--carteresto1 cflex__item--image">
-                                <!--<img class="img--resto-mobile" src="img/restaurants/small/LeDeliceDesSens.jpg" alt="Restaurant Le délice des sens"/>-->
+                                <!--<img class="img-_resto-mobile" src="img/restaurants/small/LeDeliceDesSens.jpg" alt="Restaurant Le délice des sens"/>-->
                                 <div id="img4" title="photo du restaurant le délice des sens"></div>
                             </div>
                             <div class="restaurants__cflex__item--carteresto1 cflex__item--texte">
@@ -187,11 +214,16 @@
                                     </div>
                                     <div class="restaurants__cflex__item--carteresto1 cflex__item--texte cflex__item2--coeur">
                                         <div class="coeur">
+                                            <svg class="svg-inline--fa fa-heart fa-w-16 creu2" aria-hidden="true" focusable="true" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" data-fa-i2svg="">
+                                                <path fill="currentColor" d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z">
+                                                </path>
+                                            </svg>
+                                            
                                             <!--<a href="https://developer.mozilla.org/en-US/docs/Learn" class="click-coeur" target="_blank"></a>-->
-                                                <svg class="svg-inline--fa fa-heart fa-w-16" aria-hidden="true" focusable="true" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" data-fa-i2svg="">
-                                                    <path fill="red" d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z">
-                                                    </path>
-                                                </svg>
+                                            <svg class="svg-inline--fa fa-heart fa-w-16 plein2" aria-hidden="true" focusable="true" data-prefix="fas" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                <path fill="pink" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z">
+                                                </path>
+                                            </svg>
                                         </div>
                                     </div>
                                 </div>
@@ -223,6 +255,91 @@
                     </ul>
                 </nav>
         </footer>
+    </div>
+    <div class="progress">
+        <div class="progress__elem"></div>
+    </div>
+    <div class="puzzle">
+        <div class="word">
+          <span class="letter pivot">o</span>
+          <span class="letter">h</span>
+          <span class="letter">m</span>
+          <span class="letter">y</span>
+          <span class="letter">f</span>
+          <span class="letter">o</span>
+          <span class="letter">o</span>
+          <span class="letter">d</span>
+        </div>
+        <div class="word">
+            <span class="letter">o</span>
+            <span class="letter pivot">h</span>
+            <span class="letter">m</span>
+            <span class="letter">y</span>
+            <span class="letter">f</span>
+            <span class="letter">o</span>
+            <span class="letter">o</span>
+            <span class="letter">d</span>
+          </div>
+          <div class="word">
+            <span class="letter">o</span>
+            <span class="letter">h</span>
+            <span class="letter pivot">m</span>
+            <span class="letter">y</span>
+            <span class="letter">f</span>
+            <span class="letter">o</span>
+            <span class="letter">o</span>
+            <span class="letter">d</span>
+          </div>
+          <div class="word">
+            <span class="letter">o</span>
+            <span class="letter">h</span>
+            <span class="letter">m</span>
+            <span class="letter pivot">y</span>
+            <span class="letter">f</span>
+            <span class="letter">o</span>
+            <span class="letter">o</span>
+            <span class="letter">d</span>
+          </div>
+          <div class="word">
+            <span class="letter">o</span>
+            <span class="letter">h</span>
+            <span class="letter">m</span>
+            <span class="letter">y</span>
+            <span class="letter pivot">f</span>
+            <span class="letter">o</span>
+            <span class="letter">o</span>
+            <span class="letter">d</span>
+          </div>
+          <div class="word">
+            <span class="letter">o</span>
+            <span class="letter">h</span>
+            <span class="letter">m</span>
+            <span class="letter">y</span>
+            <span class="letter">f</span>
+            <span class="letter pivot">o</span>
+            <span class="letter">o</span>
+            <span class="letter">d</span>
+          </div>
+          <div class="word">
+            <span class="letter">o</span>
+            <span class="letter">h</span>
+            <span class="letter">m</span>
+            <span class="letter">y</span>
+            <span class="letter">f</span>
+            <span class="letter">o</span>
+            <span class="letter pivot">o</span>
+            <span class="letter">d</span>
+          </div>
+          <div class="word">
+            <span class="letter">o</span>
+            <span class="letter">h</span>
+            <span class="letter">m</span>
+            <span class="letter">y</span>
+            <span class="letter">f</span>
+            <span class="letter">o</span>
+            <span class="letter">o</span>
+            <span class="letter pivot">d</span>
+          </div> 
     </div>
 </body>
 </html>

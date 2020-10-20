@@ -1,0 +1,48 @@
+.nouveau {
+    position: absolute;
+    background-color: $color-tertiary;
+    color: green;
+    top: 10px;
+    right: 25px;
+    padding: 4px;
+    padding-left : 7px;
+    padding-right: 7px;
+    z-index: 1;
+}
+
+.click-photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    z-index: 5;
+}
+
+.main-button {
+    text-decoration: none;
+    position: relative;
+    color: $color-background-blanc;
+    background-image: linear-gradient(to bottom,$color-secondary,$color-primary);
+    height: 45px;
+    border-radius: 22px;
+    font-weight: 600;
+    box-shadow: 1px 1px 5px 3px lightgrey;
+    &:hover {
+        background: linear-gradient(to bottom, lighten(#FF79DA, 5%), lighten(#9356DC, 5%));
+        box-shadow: 1px 1px 5px 3px darken(lightgrey, 10%);
+    }
+}
+
+.underscores {
+    background-color: $color-tertiary; 
+    border-style: inset;
+    height: 2px;
+    font-weight: 700;
+    width: 40px;
+    padding-left: 5px;
+    margin-left: 0px;
+    margin-top: 15px;
+    border-color: $color-tertiary;
+}

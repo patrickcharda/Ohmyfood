@@ -1,0 +1,35 @@
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-background-gris: #F7F7F7;
+$color-background-blanc: #fff;
+$color-background-black: #000;
+$breakpoints: ("mobile":"620px","middle":"920px","large":"1200px");
+$images:("#img1":"LaPaletteDuGout.jpg","#img2":"LaNoteEnchantee.jpg","#img3":"AlaFrancaise.jpg","#img4":"LeDeliceDesSens.jpg");
+$images_resto:(".img1":"LaPaletteDuGout.jpg",".img2":"LaNoteEnchantee.jpg",".img3":"AlaFrancaise.jpg",".img4":"LeDeliceDesSens.jpg");
+$accueil_small_images_path:"./../img/restaurants/small/";//prefixed
+//$accueil_small_images_path:"./img/restaurants/small/";
+$resto_small_images_path:"./../img/restaurants/small/";
+$items_fonctionnement: ("1":"__item1","2":"__item2","3":"__item3");
+$liste_restaurants: ("1":"carteresto1","2":"carteresto2","3":"carteresto3","4":"carteresto4");
+
+// variables pour l'animation au chargement de la page d'accueil (loader)
+
+$prog-bar-dur: 3000ms;
+$prog-bar-delay: 150ms;
+$show-delay: $prog-bar-dur + $prog-bar-delay * 2;
+$close-delay: $show-delay;
+
+// variables pour l'animation des menus déroulants
+
+$delay : 0.1s; 
+$duree-animation : 0.1s; 
+$delay-entree1: $delay; 
+$delay-entree2: $delay-entree1 + $duree-animation; 
+$delay-entree3: $delay-entree2 + $duree-animation; 
+$delay-plat1: $delay-entree3 + $duree-animation;
+$delay-plat2: $delay-plat1 + $duree-animation;
+$delay-plat3: $delay-plat2 + $duree-animation;
+$delay-dessert1: $delay-plat3 + $duree-animation;
+$delay-dessert2: $delay-dessert1 + $duree-animation;
+$delay-dessert3: $delay-dessert2 + $duree-animation;

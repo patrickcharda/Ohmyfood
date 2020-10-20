@@ -1,0 +1,42 @@
+.header__nav__logo {
+    font-family: 'Shrikhand', cursive;
+}
+.header__nav__back {
+    text-align: left;
+}
+
+.header {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.header, .main, .footer {
+    background-color: $color-background-blanc;
+}
+
+.header {
+    position: relative;
+    align-self: stretch;
+}
+.header__nav {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    &__back {      
+        & svg {
+            position: absolute;
+            left: 10px;
+            top: 20px;
+            & path {
+                fill: black;
+            }
+        }
+
+    }
+    &__logo {
+        order: 2;
+    }
+}

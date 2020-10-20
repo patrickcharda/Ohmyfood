@@ -1,0 +1,78 @@
+
+.restaurants__cflex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    background-color: $color-background-gris;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    &__item--titre {
+        flex-basis: 100%;
+        padding-left: 5px;
+        padding-bottom: 20px;
+        padding-top: 10px;
+        align-self: flex-start;
+    }
+    &__item--carteresto1 {
+        position: relative;
+        &:hover {
+            cursor: pointer;
+        }
+        margin-bottom: 10px;
+        flex-basis: 100%;
+        & .cflex {
+            display: flex;
+            flex-wrap: wrap;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+            background-color: $color-background-blanc;
+            &__item--image {
+                flex-basis: 100%;
+                display: flex;
+                position: relative;
+                height: 150px;
+                @include images_accueil($images);
+            }
+            &__item--texte {
+                flex-basis: 100%;
+                height: 50px;
+                & .cflex {
+                    display:flex;
+                    justify-content: space-between;
+                    &__item1--identite {
+                        flex-basis: 50%;
+                        & .cflex {
+                            display: flex;
+                            flex-wrap: wrap;
+                            padding-top: 5px;
+                            padding-bottom: 5px;
+                            padding-left: 10px;
+                            height: 50px;
+
+                            & .nom_resto {
+                                font-weight: 600;
+                                flex-basis: 100%;
+                            }
+                            & .adresse_resto {
+                                font-weight: 300;
+                                flex-basis: 100%;
+                            }
+                        }
+                    }
+                    &__item2--coeur {
+                        position: relative;
+                        text-align: right;
+                        padding-right: 15px;
+                        padding-top: 10px;
+                        flex-basis: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
