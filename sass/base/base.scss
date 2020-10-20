@@ -1,0 +1,27 @@
+* {
+	box-sizing: border-box;
+}
+.titres {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.body-two {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+}
+.main {
+    flex-basis: 100%;
+    align-self: stretch;
+}
+p {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+a {
+    text-decoration: none;
+    color: currentColor;
+}

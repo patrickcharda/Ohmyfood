@@ -1,0 +1,102 @@
+@import './sass/base/base';
+@import './sass/utils/variables';
+@import './sass/utils/mixins';
+@import './sass/pages/acceuil.scss';
+@import './sass/pages/menus.scss';
+@import './sass/components/restaurants.scss';
+@import './sass/components/menus.scss';
+@import './sass/components/animation-menus.scss';
+@import './sass/components/components.scss';
+@import './sass/components/animation-coeur.scss';
+@import './sass/layouts/header';
+@import './sass/layouts/footer';
+
+
+@media only screen and (min-width:620px) {
+    body {
+        align-items: center;
+        font-size: 11pt;
+    }
+    .second-skin-accueil{
+        max-width: 900px;
+        align-items: center;
+    } 
+    .second-skin-resto{
+        max-width: 900px;
+        align-items: center;
+    } 
+    .restaurants__cflex {
+        flex-direction: row;
+        align-items:center;
+        justify-content: space-around;
+        &__item--carteresto1 {
+            flex-basis: 39%;
+            .cflex__item--texte {
+                height: 60px;
+                .cflex__item1--identite .cflex {
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    .nom_resto, .adresse_resto {
+                        flex-basis: auto;
+                    }
+                }
+            }
+        }
+    }
+    .menu__item__photo {
+        height:300px;
+    }
+    .menu__item__carte {
+        .cflex__item__enseigne {
+        text-align: center;
+        justify-content: center;
+        }
+    }
+}
+
+@media only screen and (min-width:750px) {
+    .menu__item__carte .cflex__item__moment .cflex__item__entrees,
+    .menu__item__carte .cflex__item__moment .cflex__item__plats,
+    .menu__item__carte .cflex__item__moment .cflex__item__desserts {
+        flex-basis: 50%;
+    }
+}
+
+@media only screen and (min-width:800px) {
+    .presentation__cflex__item2 {
+        &--titre {
+            h3.titres {
+            text-align: center;
+            }
+        }
+        .fct__cflex {
+            flex-wrap: nowrap;
+        }
+    }
+
+    .restaurants__cflex {
+        &__item--carteresto1 {
+            flex-basis: 35%;
+            margin-bottom: 20px;
+        }
+        &__item--titre {
+            & > h3.titres {
+            text-align: center;
+            }
+        }
+    } 
+}
+@media only screen and (min-width: 1125px) {
+    .second-skin-resto {
+        max-width: 1200px;
+    }
+    .menu__item__carte .cflex__item__moment .cflex__item__entrees,
+    .menu__item__carte .cflex__item__moment .cflex__item__plats,
+    .menu__item__carte .cflex__item__moment .cflex__item__desserts {
+        flex-basis: 33.33%;
+    }
+}
+
+
+ 
+    
