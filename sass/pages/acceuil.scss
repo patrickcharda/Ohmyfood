@@ -234,11 +234,19 @@ body {
             margin-bottom: -3px;
         }
         & .localisation {
+            position: relative;
             background-color: #EDEDED;
             text-align: center;
             padding-top: 15px;
             padding-bottom: 15px;
             margin-top: 3px;
+            > .locate-link {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0px;
+              left: 0px;
+            }
         }
         & .reservation__cflex {
             display: flex;
