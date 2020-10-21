@@ -18,7 +18,7 @@ Résultat de l'intégration : [maquette Ohmyfood](https://patrickcharda.github.i
 - effets graphiques et animations accessibles au clic ou au survol, visibles sur la maquette
 - animations ou transitions réalisées en CSS, pas de JavaScript ou de librairie
 
-  #### Liste des animations
+ #### Liste des animations
   
   - :soon: -> "spin-loader" au chargement de la page d'accueil
   - :heartpulse: -> remplissage des coeurs lorsqu'ils sont survolés
