@@ -16,10 +16,8 @@ Résultat de l'intégration : [maquette Ohmyfood](https://patrickcharda.github.i
 - site mobile-first
 - maquettes pour mobile fournies; versions pour les écrans de tailles supérieures à concevoir
 - effets graphiques et animations accessibles au clic ou au survol, visibles sur la maquette
-- animations ou transitions réalisées en CSS, pas de JavaScript ou de librairie
+- **animations ou transitions** réalisées en CSS, pas de JavaScript ou de librairie :
 
- #### Liste des animations
-  
   - :soon: -> "spin-loader" au chargement de la page d'accueil
   - :heartpulse: -> remplissage des coeurs lorsqu'ils sont survolés
   - :book: -> apparition progressive des menus au chargement de la page
