@@ -7,7 +7,6 @@
     justify-content: stretch;
     align-items: stretch;
     animation: show 0.2s $show-delay both; // affichage du contenu page d'accueil au bout de 2 secondes
-
 }
 
 // animation au chargement de la page d'accueil
@@ -26,9 +25,9 @@
     overflow-x: hidden;
     transform: scale(.9);
     animation: spin 1.5s 1s forwards;
-  }
+}
   
-  .puzzle .word .letter {
+.puzzle .word .letter {
     width: 3em;
     height: 3em;
     margin: 0.10em;
@@ -41,61 +40,62 @@
     position: relative;
     animation: swap-right 2s forwards;
     //animation: swap-right 2s forwards, square 0.5s 1.5s forwards;
-  }
+}
   
-  .puzzle .word .letter:before {
+.puzzle .word .letter:before {
     content: "";
     display: inline-block;
     height: 100%;
     vertical-align: middle;
-  }
+}
   
-  .puzzle .word .letter:last-child {
+.puzzle .word .letter:last-child {
     margin-right: auto;
-  }
+}
   
-  .puzzle .word .pivot {
+.puzzle .word .pivot {
     background-color: $color-primary;
-  }
+}
   
-  .puzzle .word .pivot,
-  .puzzle .word .pivot ~ .letter {
+.puzzle .word .pivot,
+.puzzle .word .pivot ~ .letter {
     animation: swap-left 1s forwards;
-  }
+}
 
-  @keyframes swap-right {
+@keyframes swap-right {
     0% {
-      order: 1;
+        order: 1;
     }
     33% {
-      border-radius: 0em;
+        border-radius: 0em;
     }
     66% {
         border-radius: 1.5em;
     }
     100% {
-      order: 2;
-      right: 50%;
-      border-radius: 1.5em;
+        order: 2;
+        right: 50%;
+        border-radius: 1.5em;
     }
-  }
-  @keyframes swap-left {
+}
+
+@keyframes swap-left {
     0% {
-      order: 2;
+        order: 2;
     }
     33% {
-      border-radius: 0em;
+        border-radius: 0em;
     }
     66% {
         border-radius: 1.5em;
     }
     100% {
-      order: 1;
-      left: 50%;
-      border-radius: 1.5em;
+        order: 1;
+        left: 50%;
+        border-radius: 1.5em;
     }
-  }
-  @keyframes spin {
+}
+@keyframes spin {
     30% {
         perspective: 25px;
         transform:  rotateZ(360deg);
@@ -116,95 +116,95 @@
     100% {
         transform: scale(1);
     }
-  }
-  @keyframes square {
-      50%, 100% {
-          border-radius: 0em;
-      }
-  }
+}
+@keyframes square {
+    50%, 100% {
+        border-radius: 0em;
+    }
+}
 
-  // barre de chargement
+// barre de chargement
 
   
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 10pt;
     background-color: white; 
-	display: flex;
-	align-items: stretch;
-	justify-content: stretch;
+	  display: flex;
+	  align-items: stretch;
+	  justify-content: stretch;
     flex-direction: column-reverse;
     animation: darkvador $show-delay backwards; //mettre un fond noir au chargement pdt le déoulement de l'animation
-	.progress {
+    .progress {
         position: absolute;
         opacity: 0.3;
-		width: 50%;
+        width: 50%;
         height: 3vh;
         bottom: 5%;
         left: 25%;
         border: 2px solid white;
         background-color: white;
-		padding: 0.25rem;
+        padding: 0.25rem;
         animation: close-progress 200ms $close-delay forwards; //faire disparaître la barre de progression une fois remplie
-		&__elem {
+        &__elem {
             height: 100%;
-			background: $color-tertiary;
-			height: 100%;
-			transform-origin: left;
-			transform: scaleX(0.5);
-			animation: progress-elem $prog-bar-dur $prog-bar-delay both; // faire avancer la barre de chargement
-		}
+            background: $color-tertiary;
+            height: 100%;
+            transform-origin: left;
+            transform: scaleX(0.5);
+            animation: progress-elem $prog-bar-dur $prog-bar-delay both; // faire avancer la barre de chargement
+        }
     }
 }
 
 @keyframes darkvador {
-	100% {
+  	100% {
         background-color: black;
     }
 }
 
 @keyframes show {
-	0% {
-		transform: translateX(-9999px);
+	  0% {
+		    transform: translateX(-9999px);
     }
     25% {
-		transform: translateX(-75%);
+		    transform: translateX(-75%);
     }
     50% {
-		transform: translateX(-50%);
+		    transform: translateX(-50%);
     }
     75% {
-		transform: translateX(-25%);
-	}
+		    transform: translateX(-25%);
+	  }
 	100% {
-		transform: translateX(0);
-	}
+		  transform: translateX(0);
+	  }
 }
 
 @keyframes progress-elem {
-	0% {
-		transform: scaleX(0);
-	}
-	17% {
-		transform: scaleX(0.18);
-	}
-	24% {
-		transform: scaleX(0.4);
-		animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
-	}
-	46% {
-		transform: scaleX(0.81);
+	  0% {
+		    transform: scaleX(0);
+	  }
+	  17% {
+		    transform: scaleX(0.18);
+	  }
+	  24% {
+		    transform: scaleX(0.4);
+		    animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+	  }
+	  46% {
+		    transform: scaleX(0.81);
         background-color: darken($color-tertiary, 60%);
     }
     86% {
-		transform: scaleX(0.91);
+		    transform: scaleX(0.91);
         background-color: darken($color-tertiary, 30%);
-	}
+	  }
 	100% {
         animation-timing-function: cubic-bezier(.37,.88,.7,1.13);
         transform: scaleX(1);
         background-color: darken($color-tertiary, 10%);
-	}
+	  }
 }
 
 @keyframes close-progress {
