@@ -74,93 +74,91 @@
 }
 
 .cercle-blanc {
-display: flex;
-justify-content: center;
-align-items: center;
-width: 27px;
-height: 27px;
-border-radius: 13.5px;
-background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 27px;
+    height: 27px;
+    border-radius: 13.5px;
+    background-color: white;
 }
 .coche-verte {
-width: 15px;
-height: 9px;
-border-left: 3px $color-tertiary solid;
-border-bottom: 3px $color-tertiary solid;
-opacity: 0;
+    width: 15px;
+    height: 9px;
+    border-left: 3px $color-tertiary solid;
+    border-bottom: 3px $color-tertiary solid;
+    opacity: 0;
 }
 
 @keyframes selection {
-0% {
-    transform: scaleX(0);
-    background-color: $color-tertiary;
-    z-index: 89;
-} 
-100% {
-    max-width: 50px;
-    min-width: 50px;
-    background-color: $color-tertiary;
-    transform: scaleX(1);
-    z-index: 89;
+    0% {
+        transform: scaleX(0);
+        background-color: $color-tertiary;
+        z-index: 89;
+    }
+    100% {
+        max-width: 50px;
+        min-width: 50px;
+        background-color: $color-tertiary;
+        transform: scaleX(1);
+        z-index: 89;
+    }   
 }
-}
-
 @keyframes cercle {
-0% {
-    transform: scale(1);
-}
-100% {
-    transform: scale(1);
-}
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 @keyframes coche {
-0% {
-    transform: rotate(-360deg);
-    opacity: 0;
-}
-100% {
-    transform: rotate(-45deg);
-    opacity: 1;
-    
-}
+    0% {
+        transform: rotate(-360deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(-45deg);
+        opacity: 1; 
+    }
 }
 
 
 .entree__detail1 {
-animation: open-menu $duree-animation $delay-entree1 forwards;
+    animation: open-menu $duree-animation $delay-entree1 forwards;
 }
 .entree__detail2 {
-animation: open-menu $duree-animation $delay-entree2 forwards;
+    animation: open-menu $duree-animation $delay-entree2 forwards;
 }
 .entree__detail3 {
-animation: open-menu $duree-animation $delay-entree3 forwards;
+    animation: open-menu $duree-animation $delay-entree3 forwards;
 }
 
 .plat__detail1 {
-animation: open-menu $duree-animation $delay-plat1 forwards;
+    animation: open-menu $duree-animation $delay-plat1 forwards;
 }
 .plat__detail2 {
-animation: open-menu $duree-animation $delay-plat2 forwards;
+    animation: open-menu $duree-animation $delay-plat2 forwards;
 }
 .plat__detail3 {
-animation: open-menu $duree-animation $delay-plat3 forwards;
+    animation: open-menu $duree-animation $delay-plat3 forwards;
 }
 
 .dessert__detail1 {
-animation: open-menu $duree-animation $delay-dessert1 forwards;
+    animation: open-menu $duree-animation $delay-dessert1 forwards;
 }
 .dessert__detail2 {
-animation: open-menu $duree-animation $delay-dessert2 forwards;
+    animation: open-menu $duree-animation $delay-dessert2 forwards;
 }
 .dessert__detail3 {
-animation: open-menu $duree-animation $delay-dessert3 forwards;
+    animation: open-menu $duree-animation $delay-dessert3 forwards;
 }
 
 @keyframes open-menu {
-from {
-    transform: scaleY(0);
-}
-to {
-    transform: scaleY(1);
-}
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
+    }
 }
