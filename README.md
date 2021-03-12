@@ -3,7 +3,7 @@
 Projet d'intégration de la maquette d'une entreprise virtuelle dans le cadre de la formation 100% à distance de développeur web, dispensée par Openclassrooms.
 
 Résultat de l'intégration sur la Github page ici : [maquette Ohmyfood](https://patrickcharda.github.io/Ohmyfood/)
-ou sur mon hébergement : https://ohmyfood.by-webcycle.fr
+ou ici : https://ohmyfood.by-webcycle.fr
 
 ![maquette de site web - Ohmyfood](https://github.com/patrickcharda/PatrickChardavoineRoques_3_23092020/blob/master/overview.png)
 
