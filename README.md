@@ -1,6 +1,6 @@
 ## Ohmyfood
 
-Projet d'intégration de la maquette d'une entreprise virtuelle dans le cadre de la formation 100% à distance de développeur web, dispensée par Openclassrooms.
+Projet d'intégration mobile-first de la maquette d'une entreprise virtuelle dans le cadre de la formation 100% à distance de développeur web, dispensée par Openclassrooms.
 
 Résultat de l'intégration sur la Github page ici : [maquette Ohmyfood](https://patrickcharda.github.io/Ohmyfood/)
 ou ici : https://ohmyfood.by-webcycle.fr
